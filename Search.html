@@ -6,17 +6,17 @@
 		var cols=11 // 행의 크기, 사람 수에 따라 조정
 		var rows=4 // 열의 크기, 속성에 따라 조정
 		var student=new Array(
-		["김준건","남자","인천",'<img src="Simages/1.png">'],
-		["김준식","남자","서울",'<img src="Simages/2.jpeg">'],
-		["김영희","여자","시흥",'<img src="Simages/3.jpeg">'],
-		["임창묵","남자","시흥",'<img src="Simages/4.png">'],
-		["서정훈","남자","인천",'<img src="Simages/5.png">'],
-		["황인태","남자","시흥",'<img src="Simages/6.png">'],
-		["손유노","남자","인천",'<img src="Simages/7.png">'],
-		["오동현","남자","서울",'<img src="Simages/8.png">'],
-		["김건우","남자","인천",'<img src="Simages/9.png">'],
-		["신수빈","여자","인천",'<img src="Simages/10.png">'],
-		["최혜림","여자","인천",'<img src="Simages/11.png">'])
+		["김준건","남자","인천",'<img width="50px" height="50px" src="Simages/1.png">'],
+		["김준식","남자","서울",'<img width="50px" height="50px" src="Simages/2.jpeg">'],
+		["김영희","여자","시흥",'<img width="50px" height="50px" src="Simages/3.jpeg">'],
+		["임창묵","남자","시흥",'<img width="50px" height="50px" src="Simages/4.png">'],
+		["서정훈","남자","인천",'<img width="50px" height="50px" src="Simages/5.png">'],
+		["황인태","남자","시흥",'<img width="50px" height="50px" src="Simages/6.png">'],
+		["손유노","남자","인천",'<img width="50px" height="50px" src="Simages/7.png">'],
+		["오동현","남자","서울",'<img width="50px" height="50px" src="Simages/8.png">'],
+		["김건우","남자","인천",'<img width="50px" height="50px" src="Simages/9.png">'],
+		["신수빈","여자","인천",'<img width="50px" height="50px" src="Simages/10.png">'],
+		["최혜림","여자","인천",'<img width="50px" height="50px" src="Simages/11.png">'])
 		var result=new Array(cols) // 결과를 저장할 2차원 배열의 행 생성
 		for(i=0;i<cols;i++){ // 결과를 저장할 2차원배열의 열 생성
 			result[i]=new Array(rows)
@@ -49,7 +49,7 @@
 	   else { // 검색된 횟수가 1 이상일 때
 		document.write(flag+"<font size=5>개의 검색 결과</font><br>")
 		document.write("<table name=table1 border=2 cellpadding=5>")
-		document.write("<tr bgcolor=lightgrey><td size=10></td><td>이름</td><td>성별</td><td>주소</td></tr>")
+		document.write("<tr bgcolor=lightgrey><td size=10></td><td>이름</td><td>성별</td><td>주소</td><td>사진</td></tr>")
 		for(i=0;i<flag;i++){
 			if(result[i][k]!=0){ // result 배열에서 값이 0이 나오기 전 까지 배열의 내용 기록
 				document.write("<tr><td>"+(i+1))
@@ -78,12 +78,6 @@
 	}
 
 	</script>
-	<style>
-		img{
-			width: 20px;
-			height: 20px;
-		}
-	</style>
 	</head>
 
 	<body>
