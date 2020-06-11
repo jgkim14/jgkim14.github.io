@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="UTF-8">
 	<script>
-		var cols=8 // 행의 크기, 사람 수에 따라 조정
+		var cols=11 // 행의 크기, 사람 수에 따라 조정
 		var rows=3 // 열의 크기, 속성에 따라 조정
 		var student=new Array(
 		["김준건","남자","인천"],
@@ -11,6 +11,9 @@
 		["임창묵","남자","시흥"],
 		["서정훈","남자","인천"],
 		["황인태","남자","시흥"],
+		["손유노","남자","인천"],
+		["오동현","남자","인천"],
+		["김건우","남자","인천"],
 		["신수빈","여자","인천"],
 		["최혜림","여자","인천"])
 		var result=new Array(cols) // 결과를 저장할 2차원 배열의 행 생성
@@ -23,8 +26,8 @@
 			}
 		}
 		var sel // 이름, 성별, 주소 중에서, 즉 어느 열에서 검색할지 정하는 변수
-		var flag=0
-		var j=0
+		var flag=0 // 결과를 찾은 수를 기록하는 변수
+		var j=0 // result 배열에 검색결과를 저장할 때 순차적으로 저장될 수 있도록 함
 	</script>
 	
 	<script>
@@ -41,13 +44,13 @@
 			   j++
 		   }
 	   }
-	   if(flag==0){alert("결과 없음")}
-	   else {
+	   if(flag==0){alert("결과 없음")} // 검색된 횟수가 0회일 때
+	   else { // 검색된 횟수가 1 이상일 때
 		document.write(flag+"<font size=5>개의 검색 결과</font><br>")
 		document.write("<table name=table1 border=2 cellpadding=5>")
 		document.write("<tr bgcolor=lightgrey><td size=10></td><td>이름</td><td>성별</td><td>주소</td></tr>")
 		for(i=0;i<flag;i++){
-			if(result[i][k]!=0){
+			if(result[i][k]!=0){ // result 배열에서 값이 0이 나오기 전 까지 배열의 내용 기록
 				document.write("<tr><td>"+(i+1))
 				for(k=0;k<rows;k++){
 					document.write("</td><td>"+result[i][k])
@@ -62,14 +65,14 @@
 
 
 	}
-	function namesel(){
+	function namesel(){ // 이름을 검색했을 때 실행
 		sel=0;
 	}
-	function adsel(){
+	function adsel(){ // 주소를 검색했을 때 실행
 		sel=2;
 	}
 
-	function gensel(){
+	function gensel(){ // 성별을 검색했을 때 실행
 		sel=1;
 	}
 
@@ -91,7 +94,6 @@
 	<br><br>
 	<font size=4>전체 데이터베이스</font><br>
 	<script>
-		document.write("<font size=5>전체 데이터베이스</font><br>")
 		document.write("<table name=table1 border=2 cellpadding=5>")
 		document.write("<tr bgcolor=lightgrey><td size=10></td><td>이름</td><td>성별</td><td>주소</td></tr>")
 		for(i=0;i<cols;i++){
@@ -107,7 +109,5 @@
 		}
 
 </script>
-
-
-		
-	</body></html>
+</body>
+</html>
