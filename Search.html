@@ -4,19 +4,19 @@
 		<title>재학생 검색시스템</title>
 	<script>
 		var cols=11 // 행의 크기, 사람 수에 따라 조정
-		var rows=3 // 열의 크기, 속성에 따라 조정
+		var rows=4 // 열의 크기, 속성에 따라 조정
 		var student=new Array(
-		["김준건","남자","인천"],
-		["김준식","남자","서울"],
-		["김영희","여자","시흥"],
-		["임창묵","남자","시흥"],
-		["서정훈","남자","인천"],
-		["황인태","남자","시흥"],
-		["손유노","남자","인천"],
-		["오동현","남자","서울"],
-		["김건우","남자","인천"],
-		["신수빈","여자","인천"],
-		["최혜림","여자","인천"])
+		["김준건","남자","인천",'<img src="Simages/1.png">'],
+		["김준식","남자","서울",'<img src="Simages/2.jpeg">'],
+		["김영희","여자","시흥",'<img src="Simages/3.jpeg">'],
+		["임창묵","남자","시흥",'<img src="Simages/4.png">'],
+		["서정훈","남자","인천",'<img src="Simages/5.png">'],
+		["황인태","남자","시흥",'<img src="Simages/6.png">'],
+		["손유노","남자","인천",'<img src="Simages/7.png">'],
+		["오동현","남자","서울",'<img src="Simages/8.png">'],
+		["김건우","남자","인천",'<img src="Simages/9.png">'],
+		["신수빈","여자","인천",'<img src="Simages/10.png">'],
+		["최혜림","여자","인천",'<img src="Simages/11.png">'])
 		var result=new Array(cols) // 결과를 저장할 2차원 배열의 행 생성
 		for(i=0;i<cols;i++){ // 결과를 저장할 2차원배열의 열 생성
 			result[i]=new Array(rows)
@@ -78,6 +78,12 @@
 	}
 
 	</script>
+	<style>
+		img{
+			width: 20px;
+			height: 20px;
+		}
+	</style>
 	</head>
 
 	<body>
@@ -96,7 +102,7 @@
 	<font size=4>전체 데이터베이스</font><br>
 	<script>
 		document.write("<table name=table1 border=2 cellpadding=5>")
-		document.write("<tr bgcolor=lightgrey><td size=10></td><td>이름</td><td>성별</td><td>주소</td></tr>")
+		document.write("<tr bgcolor=lightgrey><td size=10>No</td><td>이름</td><td>성별</td><td>주소</td><td>사진</td></tr>")
 		for(i=0;i<cols;i++){
 			if(result[i][k]!=0){
 				document.write("<tr><td>"+(i+1))
