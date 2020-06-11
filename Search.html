@@ -1,0 +1,113 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+	<script>
+		var cols=8 // 행의 크기, 사람 수에 따라 조정
+		var rows=3 // 열의 크기, 속성에 따라 조정
+		var student=new Array(
+		["김준건","남자","인천"],
+		["김준식","남자","서울"],
+		["김영희","여자","시흥"],
+		["임창묵","남자","시흥"],
+		["서정훈","남자","인천"],
+		["황인태","남자","시흥"],
+		["신수빈","여자","인천"],
+		["최혜림","여자","인천"])
+		var result=new Array(cols) // 결과를 저장할 2차원 배열의 행 생성
+		for(i=0;i<cols;i++){ // 결과를 저장할 2차원배열의 열 생성
+			result[i]=new Array(rows)
+		}
+		for(i=0;i<cols;i++){ // 빈 행열 변수에는 NULL 역할을 할 0 입력
+			for(k=0;k<rows;k++){
+				result[i][k]=0
+			}
+		}
+		var sel // 이름, 성별, 주소 중에서, 즉 어느 열에서 검색할지 정하는 변수
+		var flag=0
+		var j=0
+	</script>
+	
+	<script>
+	function textClear(obj){ // 포커스 시 기존 안내 입력문자 클리어
+	 obj.value=""
+	}
+	function search(list){
+
+	   for(i=0;i<cols;i++){
+		   if(student[i][sel].indexOf(list)>=0){ // 만약 검색어가 문자열에 포함되면, 즉 인덱스오브 값이 음수가 아니면
+			   flag++
+
+			   result[j]=student[i]
+			   j++
+		   }
+	   }
+	   if(flag==0){alert("결과 없음")}
+	   else {
+		document.write(flag+"<font size=5>개의 검색 결과</font><br>")
+		document.write("<table name=table1 border=2 cellpadding=5>")
+		document.write("<tr bgcolor=lightgrey><td size=10></td><td>이름</td><td>성별</td><td>주소</td></tr>")
+		for(i=0;i<flag;i++){
+			if(result[i][k]!=0){
+				document.write("<tr><td>"+(i+1))
+				for(k=0;k<rows;k++){
+					document.write("</td><td>"+result[i][k])
+				}
+			}
+			else{break}
+
+
+		}
+
+	   }
+
+
+	}
+	function namesel(){
+		sel=0;
+	}
+	function adsel(){
+		sel=2;
+	}
+
+	function gensel(){
+		sel=1;
+	}
+
+	</script>
+	</head>
+
+	<body>
+	<font size=5>검색어를 입력 후 검색 하세요.</font>
+	<form>
+	이름: <input name="name" type="text" size="10" value="이름 입력" onfocus="textClear(this.form.name)">&nbsp&nbsp
+	<input type="button" value="검색" onclick="namesel(); search(this.form.name.value); return false;"><br><br>
+	성별: <select name="gender">
+	<option>남자</option>
+	<option>여자</option>
+	</select>&nbsp
+	<input type=button value="검색" onclick="gensel(); search(this.form.gender.value);"><br><br>
+	주소: <input name="address" type="text" size="30" value="도시 이름을 입력하세요. 예)인천" onFocus="textClear(this.form.address)">&nbsp
+	<input type=button value="검색" onclick="adsel();search(this.form.address.value)"><br>
+	<br><br>
+	<font size=4>전체 데이터베이스</font><br>
+	<script>
+		document.write("<font size=5>전체 데이터베이스</font><br>")
+		document.write("<table name=table1 border=2 cellpadding=5>")
+		document.write("<tr bgcolor=lightgrey><td size=10></td><td>이름</td><td>성별</td><td>주소</td></tr>")
+		for(i=0;i<cols;i++){
+			if(result[i][k]!=0){
+				document.write("<tr><td>"+(i+1))
+				for(k=0;k<rows;k++){
+					document.write("</td><td>"+student[i][k])
+				}
+			}
+			else{break}
+
+
+		}
+
+</script>
+
+
+		
+	</body></html>
