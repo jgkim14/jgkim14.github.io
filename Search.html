@@ -45,9 +45,9 @@
 			   j++
 		   }
 	   }
-	   if(flag==0){alert("결과 없음")} // 검색된 횟수가 0회일 때
+	   if(flag==0){alert("검색 결과가 없습니다.")} // 검색된 횟수가 0회일 때
 	   else { // 검색된 횟수가 1 이상일 때
-		document.write(flag+"<font size=5>개의 검색 결과</font><br>")
+		document.write(list+"<font>에 대한 </font>"+flag+"<font>개의 검색 결과</font><br>")
 		document.write("<table name=table1 border=2 cellpadding=5>")
 		document.write("<tr bgcolor=lightgrey><td size=10>No</td><td>이름</td><td>성별</td><td>주소</td><td>사진</td></tr>")
 		for(i=0;i<flag;i++){
