@@ -27,8 +27,7 @@
 			}
 		}
 		var sel // 이름, 성별, 주소 중에서, 즉 어느 열에서 검색할지 정하는 변수
-		var flag=0 // 결과를 찾은 수를 기록하는 변수
-		var j=0 // result 배열에 검색결과를 저장할 때 순차적으로 저장될 수 있도록 함
+		var flag=0 // 결과를 찾은 수를 기록하는 변수, result 배열에 검색결과를 저장할 때 순차적으로 저장될 수 있도록 함
 	</script>
 	
 	<script>
@@ -38,11 +37,9 @@
 	function search(list){
 
 	   for(i=0;i<cols;i++){
-		   if(student[i][sel].indexOf(list)>=0){ // 만약 검색어가 문자열에 포함되면, 즉 인덱스오브 값이 음수가 아니면
+		   if(student[i][sel].indexOf(list)>=0){ // 만약 검색어가 문자열에 포함되면, 즉 인덱스오브 값이 음수가 아니면+
+			   result[flag]=student[i]
 			   flag++
-
-			   result[j]=student[i]
-			   j++
 		   }
 	   }
 	   if(flag==0){alert("검색 결과가 없습니다.")} // 검색된 횟수가 0회일 때
