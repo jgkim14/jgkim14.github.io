@@ -1,20 +1,20 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>재학생 검색시스템</title>
+		<title>수강과목 조회</title>
 	<script>
 		var cols=9 // 행의 크기, 사람 수에 따라 조정
 		var rows=4 // 열의 크기, 속성에 따라 조정
 		var student=new Array(
-		["김준건","남자","인천",'<img width="50px" height="50px" src="Simages/1.png">'],
-		["김준식","남자","서울",'<img width="50px" height="50px" src="Simages/2.jpeg">'],
-		["김영희","여자","시흥",'<img width="50px" height="50px" src="Simages/3.jpeg">'],
-		["임창묵","남자","시흥",'<img width="50px" height="50px" src="Simages/4.png">'],
-		["서정훈","남자","인천",'<img width="50px" height="50px" src="Simages/5.png">'],
-		["황인태","남자","시흥",'<img width="50px" height="50px" src="Simages/6.png">'],
-		["손유노","남자","인천",'<img width="50px" height="50px" src="Simages/7.png">'],
-		["오동현","남자","서울",'<img width="50px" height="50px" src="Simages/8.png">'],
-		["김건우","남자","인천",'<img width="50px" height="50px" src="Simages/9.png">'])
+		["소프트웨어 공학","전공","조상엽",'<img width="50px" height="50px" src="Simages/2.jpeg">'],
+		["컴퓨터 구조","전공","이종찬",'<img width="50px" height="50px" src="Simages/2.jpeg">'],
+		["운영체제","전공","김혁진",'<img width="50px" height="50px" src="Simages/2.jpeg">'],
+		["자료구조","전공","류상률",'<img width="50px" height="50px" src="Simages/2.jpeg">'],
+		["화일구조","전공","조상엽",'<img width="50px" height="50px" src="Simages/2.jpeg">'],
+		["정보통신","전공","최규석",'<img width="50px" height="50px" src="Simages/2.jpeg">'],
+		["스피치와 토론","교양","김태희",'<img width="50px" height="50px" src="Simages/2.jpeg">'],
+		["학술저 글쓰기","교양","박선영",'<img width="50px" height="50px" src="Simages/2.jpeg">'],
+		["역사속 리더쉽","교양","김병모",'<img width="50px" height="50px" src="Simages/2.jpeg">'])
 		var result=new Array(cols) // 결과를 저장할 2차원 배열의 행 생성
 		for(i=0;i<cols;i++){ // 결과를 저장할 2차원배열의 열 생성
 			result[i]=new Array(rows)
@@ -76,16 +76,16 @@
 	</head>
 
 	<body>
-	<font size=5>검색어를 입력 후 검색 하세요.</font>
+	<font size=5>과목 이름을 검색하세요.</font>
 	<form>
 	이름: <input name="name" type="text" size="10" value="이름 입력" onfocus="textClear(this.form.name)">&nbsp&nbsp
 	<input type="button" value="검색" onclick="namesel(); search(this.form.name.value); return false;"><br><br>
 	성별: <select name="gender">
-	<option>남자</option>
-	<option>여자</option>
+	<option>전공</option>
+	<option>교양</option>
 	</select>&nbsp
 	<input type=button value="검색" onclick="gensel(); search(this.form.gender.value);"><br><br>
-	주소: <input name="address" type="text" size="30" value="도시 이름을 입력하세요. 예)인천" onFocus="textClear(this.form.address)">&nbsp
+	주소: <input name="address" type="text" size="30" value="교수 이름을 입력하세요. 예)홍길동" onFocus="textClear(this.form.address)">&nbsp
 	<input type=button value="검색" onclick="adsel();search(this.form.address.value)"><br>
 	<br><br>
 	<font size=4>전체 데이터베이스</font><br>
