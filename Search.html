@@ -78,14 +78,14 @@
 	<body>
 	<font size=5>과목 이름을 검색하세요.</font>
 	<form>
-	이름: <input name="name" type="text" size="10" value="이름 입력" onfocus="textClear(this.form.name)">&nbsp&nbsp
+	과목명: <input name="name" type="text" size="10" value="과목명 입력" onfocus="textClear(this.form.name)">&nbsp&nbsp
 	<input type="button" value="검색" onclick="namesel(); search(this.form.name.value); return false;"><br><br>
-	성별: <select name="gender">
+	과목 구분: <select name="gender">
 	<option>전공</option>
 	<option>교양</option>
 	</select>&nbsp
 	<input type=button value="검색" onclick="gensel(); search(this.form.gender.value);"><br><br>
-	주소: <input name="address" type="text" size="30" value="교수 이름을 입력하세요. 예)홍길동" onFocus="textClear(this.form.address)">&nbsp
+	교수명: <input name="address" type="text" size="30" value="교수 이름을 입력하세요. 예)홍길동" onFocus="textClear(this.form.address)">&nbsp
 	<input type=button value="검색" onclick="adsel();search(this.form.address.value)"><br>
 	<br><br>
 	<font size=4>전체 데이터베이스</font><br>
