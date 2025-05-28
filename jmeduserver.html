@@ -5,20 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JMEDUSERVER 상세 설명</title>
   <style>
-    /* 노션 스타일 밝은 테마 */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', Arial, sans-serif;
       background-color: #f7f7fa;
-      color: #222;
-      line-height: 1.7;
-      padding-bottom: 50px;
+      color: #22223b;
+      padding: 0;
+      margin: 0;
       min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 48px auto 0 auto;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #ececec;
+      padding: 40px 32px 32px 32px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #22223b;
+      margin-bottom: 18px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      text-align: left;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: #22223b;
+      margin-top: 36px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: #444;
+      font-size: 1.08rem;
+    }
+
+    ul, ol {
+      margin-bottom: 18px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 6px;
+      color: #444;
+      font-size: 1.05rem;
     }
 
     a {
@@ -32,90 +70,68 @@
       color: #174ea6;
     }
 
-    header {
-      background: #fff;
-      padding: 48px 20px 32px 20px;
-      text-align: center;
-      border-bottom: 1px solid #ececec;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: #fafbfc;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
     }
 
-    header h1 {
-      font-size: 2.7rem;
-      color: #22223b;
-      margin-bottom: 12px;
-      font-weight: 700;
-      letter-spacing: -1px;
-    }
-
-    header p {
-      font-size: 1.15rem;
-      color: #6c757d;
-      font-weight: 500;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 48px auto 0 auto;
-      padding: 0 24px;
-    }
-
-    .project {
-      background: #fff;
-      padding: 28px 28px 20px 28px;
-      border-radius: 14px;
-      margin-bottom: 32px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    th, td {
       border: 1px solid #ececec;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-
-    .project:hover {
-      box-shadow: 0 6px 24px rgba(0,0,0,0.10);
-      transform: translateY(-3px) scale(1.01);
-    }
-
-    .project h2 {
-      color: #22223b;
-      font-size: 1.6rem;
-      margin-bottom: 8px;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-    }
-
-    .project p {
-      margin-bottom: 10px;
-      color: #444;
-      font-size: 1.05rem;
-    }
-
-    .project strong {
-      color: #2d72d9;
-      font-weight: 600;
-    }
-
-    footer {
-      text-align: center;
-      padding: 28px 0 16px 0;
-      color: #b0b0b0;
+      padding: 10px;
+      text-align: left;
       font-size: 1rem;
-      background: #f7f7fa;
-      border-top: 1px solid #ececec;
-      margin-top: 48px;
+    }
+
+    th {
+      background-color: #f3f4f6;
+      color: #22223b;
+      font-weight: 600;
+    }
+
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.06);
+      display: block;
+    }
+
+    .back {
+      margin-top: 36px;
+      text-align: left;
+    }
+
+    .back a {
+      color: #888;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+
+    .back a:hover {
+      color: #2d72d9;
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
+      .container {
+        padding: 18px 8px 18px 8px;
       }
-      .project h2 {
-        font-size: 1.2rem;
+
+      h1 {
+        font-size: 1.3rem;
       }
-      main {
-        padding: 0 8px;
+
+      h2 {
+        font-size: 1.05rem;
       }
-      .project {
-        padding: 18px 10px 14px 10px;
+
+      th, td {
+        font-size: 0.95rem;
+        padding: 6px;
       }
     }
   </style>
@@ -126,7 +142,7 @@
 
     <p align="center">
       <img src="imgs/screenshot-main.png" alt="메인 스크린샷">
-      <img src="imgs/kakaotalk-photo.jpeg" alt="카카오톡 알림 이미지" width="500">
+      <img src="imgs/kakaotalk-photo.jpeg" alt="카카오톡 알림 이미지" style="max-width:500px;">
     </p>
 
     <h2>프로젝트 구성원</h2>
