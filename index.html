@@ -106,7 +106,7 @@
     .stack-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 12px;
       margin-top: 8px;
     }
 
@@ -144,8 +144,9 @@
       .stack-item {
         min-width: 0;
         width: 100%;
+        flex: none !important;
+        padding: 12px 12px 10px 12px !important;
       }
-      /* 소개 박스(프로필) 모바일 대응 */
       .project.intro-flex {
         flex-direction: column !important;
         align-items: stretch !important;
@@ -153,13 +154,17 @@
         gap: 0 !important;
       }
       .project.intro-flex .intro-text {
-        order: 1;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
       }
-      .project.intro-flex .profile-img {
-        margin: 0 auto 18px auto !important;
-        display: block;
+      .project.intro-flex .intro-text .profile-img {
+        display: block !important;
+        margin: 18px auto 18px auto !important;
         align-self: center;
-        order: 2;
+      }
+      .project.intro-flex .pc-only {
+        display: none !important;
       }
       .project.intro-flex h2 {
         text-align: center;
@@ -203,10 +208,23 @@
       .project.intro-flex .intro-text {
         order: 1;
       }
-      .project.intro-flex .profile-img {
+      .project.intro-flex .profile-img.pc-only {
         margin: 0 !important;
-        align-self: flex-start;
+        align-self: center !important;
         order: 2;
+        display: block !important;
+      }
+    }
+    @media (max-width: 700px) {
+      .project-stack-list {
+        align-items: center !important;
+        justify-content: center !important;
+        display: flex !important;
+      }
+      .project-stack-list .stack-item {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 400px !important;
       }
     }
   </style>
@@ -221,19 +239,21 @@
   <main>
     <!-- 소개 박스 -->
     <div class="project intro-flex" style="margin-top:32px; margin-bottom:18px; display:flex; align-items:center; gap:28px;">
-      <div class="intro-text" style="flex:1;">
+      <div class="intro-text" style="flex:1; display:flex; flex-direction:column;">
         <h2>👋 소개</h2>
+        <img class="profile-img" src="imgs/me.jpg" alt="김준건 프로필 사진"
+          style="width:110px; height:110px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin:18px 0 18px 0; display:none;">
         <p style="width:100%;">
           안녕하세요, <strong>백엔드 개발자 김준건</strong>입니다.<br>
           학우들과 함께 트리넛을 설립하여 다양한 프로젝트를 진행했습니다.<br>
           트리넛의 대표로서, B2B 계약을 체결하여 고객 요구사항에 맞는 서비스를 개발 및 피드백을 받아 개선한 경험이 있습니다.
         </p>
       </div>
-      <img class="profile-img" src="imgs/me.jpg" alt="김준건 프로필 사진"
+      <img class="profile-img pc-only" src="imgs/me.jpg" alt="김준건 프로필 사진"
         style="width:110px; height:110px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0;">
     </div>
 
-    <!-- 약력 박스 추가 -->
+    <!-- 약력 박스 -->
     <div class="project" style="margin-top:0; margin-bottom:18px;">
       <h2>📝 약력</h2>
       <ul style="margin:0; padding-left:20px; color:#444; font-size:1.05rem;">
@@ -274,11 +294,11 @@
       </div>
     </div>
 
-    <!-- 수행한 프로젝트 박스 (제목 포함) -->
+    <!-- 수행한 프로젝트 박스 -->
     <div class="project" style="margin-bottom:32px;">
       <h2>📁 수행한 프로젝트</h2>
-      <div class="stack-list" style="justify-content:center; gap:24px;">
-        <div class="stack-item" style="min-width:280px; max-width:48%; margin-bottom:0;">
+      <div class="stack-list project-stack-list" style="justify-content:center; gap:24px;">
+        <div class="stack-item" style="min-width:280px; max-width:48%;">
           <div class="stack-name" style="font-size:1.18rem;">
             <a href="jmeduserver.html" style="color:#2d72d9; text-decoration:none;">🖥️ JMEDUSERVER</a>
           </div>
@@ -290,7 +310,7 @@
           </div>
           <a href="https://github.com/jgkim14/JMEDUSERVER" target="_blank" style="font-size:0.98rem;">GitHub 저장소 바로가기</a>
         </div>
-        <div class="stack-item" style="min-width:280px; max-width:48%; margin-bottom:0;">
+        <div class="stack-item" style="min-width:280px; max-width:48%;">
           <div class="stack-name" style="font-size:1.18rem;">
             <a href="chatbot.html" style="color:#2d72d9; text-decoration:none;">🤖💬 ChatBot</a>
           </div>
