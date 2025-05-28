@@ -103,6 +103,50 @@
       margin-top: 48px;
     }
 
+    .stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .stack-item {
+      background: #f4f8fd;
+      border: 1px solid #e3eaf5;
+      border-radius: 10px;
+      padding: 16px 18px 12px 18px;
+      min-width: 180px;
+      flex: 1 1 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 0 2px 8px rgba(45,114,217,0.04);
+      transition: box-shadow 0.2s;
+    }
+    .stack-item:hover {
+      box-shadow: 0 6px 18px rgba(45,114,217,0.10);
+    }
+    .stack-name {
+      font-weight: 700;
+      color: #2d72d9;
+      font-size: 1.08rem;
+      margin-bottom: 4px;
+    }
+    .stack-desc {
+      color: #444;
+      font-size: 0.98rem;
+    }
+    @media (max-width: 700px) {
+      .stack-list {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .stack-item {
+        min-width: 0;
+        width: 100%;
+      }
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
@@ -117,30 +161,112 @@
         padding: 18px 10px 14px 10px;
       }
     }
+
+    @media (max-width: 800px) {
+      .project-list {
+        flex-direction: column;
+        gap: 0;
+      }
+      .project-list .project {
+        max-width: 100%;
+        margin-bottom: 24px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>김준건의 포트폴리오</h1>
-    <p>백엔드 개발자 | Node.js, Spring Boot, FastAPI</p>
+    <p>Backend Developer</p>
   </header>
 
   <main>
-  <div class="project">
-    <h2><a href="jmeduserver.html">JMEDUSERVER</a></h2>
-    <p>제이엠에듀 학생관리시스템 서버로, 학생 정보 관리 및 관련 기능을 제공합니다.</p>
-    <p><strong>기술 스택:</strong> Node.js, React, MySQL, Docker</p>
-    <p><a href="https://github.com/jgkim14/JMEDUSERVER" target="_blank">GitHub 저장소 바로가기</a></p>
-  </div>
+    <!-- 소개 박스 -->
+    <div class="project" style="margin-top:32px; margin-bottom:18px; display:flex; align-items:center; gap:28px;">
+      <div style="flex:1;">
+        <h2>👋 소개</h2>
+        <p>
+          안녕하세요, <strong>백엔드 개발자 김준건</strong>입니다.<br>
+          학우들과 함께 트리넛을 설립하여 다양한 프로젝트를 진행했습니다.<br>
+          트리넛의 대표로서, B2B 계약을 체결하여 고객 요구사항에 맞는 서비스를 개발 및 피드백을 받아 개선한 경험이 있습니다.
+        </p>
+      </div>
+      <img src="imgs/me.jpg" alt="김준건 프로필 사진" style="width:110px; height:110px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0;">
+    </div>
 
-  <div class="project">
-    <h2><a href="chatbot.html">ChatBot</a></h2>
-    <p>사용자와 상호작용하는 챗봇 웹사이트 프로젝트입니다.</p>
-    <p><strong>기술 스택:</strong> Spring Boot, FastAPI, MongoDB, React</p>
-    <p><a href="https://github.com/jgkim14/ChatBot" target="_blank">GitHub 저장소 바로가기</a></p>
-  </div>
-</main>
+    <!-- 약력 박스 추가 -->
+    <div class="project" style="margin-top:0; margin-bottom:18px;">
+      <h2>📝 약력</h2>
+      <ul style="margin:0; padding-left:20px; color:#444; font-size:1.05rem;">
+        <li><strong>2019.06</strong> - 청운대학교 청학동 스터디그룹 우수그룹상 수상 (팀장)</li>
+        <li><strong>2019.08</strong> - 청운대학교 컴퓨터공학과 성적우수장학생 선정</li>
+        <li><strong>2020.03</strong> - 청운대학교 컴퓨터공학과 성적우수장학생 선정</li>
+        <li><strong>2020.10</strong> - 한국인터넷방송통신학회(IIBC) 논문우수상 수상</li>
+        <li><strong>2022.02</strong> - KCI 논문 등재 : AR 플랫폼을 사용하지 않는 실제 방 기반 인테리어 시뮬레이션 연구</li>
+        <li><strong>2024.06</strong> - 프로젝트 외주 계약, 서비스 운영을 위한 트리넛 설립</li>
+        <li><strong>2025.02</strong> - 청운대학교 컴퓨터공학과 졸업 (평점 평균 3.9, 전공 3.83)</li>
+      </ul>
+    </div>
+
+    <!-- 기술스택 박스 -->
+    <div class="project" style="margin-top:0; margin-bottom:32px;">
+      <h2>👊 주요 기술 스택</h2>
+      <div class="stack-list">
+        <div class="stack-item">
+          <div class="stack-name">🌱 Node.js</div>
+          <div class="stack-desc">비동기 이벤트 기반의 고성능 서버 개발에 활용</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">☕ Spring Boot</div>
+          <div class="stack-desc">대규모 서비스에 적합한 안정적인 백엔드 프레임워크</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">🐬 MySQL</div>
+          <div class="stack-desc">관계형 데이터베이스 설계 및 운영</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">🐳 Docker</div>
+          <div class="stack-desc">컨테이너 기반의 배포 및 환경 관리</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">🌐 NginX</div>
+          <div class="stack-desc">컨테이너 기반의 배포 및 환경 관리</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 수행한 프로젝트 박스 (제목 포함) -->
+    <div class="project" style="margin-bottom:32px;">
+      <h2>📁 수행한 프로젝트</h2>
+      <div class="stack-list">
+        <div class="stack-item" style="min-width:280px; max-width:48%;">
+          <div class="stack-name" style="font-size:1.18rem;">
+            <a href="jmeduserver.html" style="color:#2d72d9; text-decoration:none;">🖥️ JMEDUSERVER</a>
+          </div>
+          <div class="stack-desc" style="margin-bottom:8px;">
+            제이엠에듀 학생관리시스템 서버로, 학생 정보 관리 및 관련 기능을 제공합니다.
+          </div>
+          <div class="stack-desc" style="margin-bottom:8px;">
+            <strong>사용 기술:</strong> Node.js, React, MySQL, Docker
+          </div>
+          <a href="https://github.com/jgkim14/JMEDUSERVER" target="_blank" style="font-size:0.98rem;">GitHub 저장소 바로가기</a>
+        </div>
+        <div class="stack-item" style="min-width:280px; max-width:48%;">
+          <div class="stack-name" style="font-size:1.18rem;">
+            <a href="chatbot.html" style="color:#2d72d9; text-decoration:none;">🤖💬 ChatBot</a>
+          </div>
+          <div class="stack-desc" style="margin-bottom:8px;">
+            사용자와 상호작용하는 챗봇 웹사이트 프로젝트입니다.
+          </div>
+          <div class="stack-desc" style="margin-bottom:8px;">
+            <strong>사용 기술:</strong> Spring Boot, FastAPI, MongoDB, React
+          </div>
+          <a href="https://github.com/jgkim14/ChatBot" target="_blank" style="font-size:0.98rem;">GitHub 저장소 바로가기</a>
+        </div>
+      </div>
+    </div>
+  </main>
 
   <footer>
     &copy; 2025 김준건. All rights reserved.
