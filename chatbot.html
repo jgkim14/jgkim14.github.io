@@ -5,31 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ChatBot 상세 설명</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #1e1e2f;
-      color: #f0f0f0;
-      padding: 20px;
-      line-height: 1.6;
+      font-family: 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', Arial, sans-serif;
+      background-color: #f7f7fa;
+      color: #222;
+      line-height: 1.7;
+      padding-bottom: 50px;
+      min-height: 100vh;
     }
+
     a {
-      color: #61dafb;
+      color: #2d72d9;
       text-decoration: none;
+      transition: color 0.2s;
     }
-    .container {
-      max-width: 800px;
-      margin: auto;
+
+    a:hover {
+      text-decoration: underline;
+      color: #174ea6;
     }
-    h1 {
-      color: #ffffff;
+
+    header {
+      background: #fff;
+      padding: 48px 20px 32px 20px;
+      text-align: center;
+      border-bottom: 1px solid #ececec;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    header h1 {
+      font-size: 2.7rem;
+      color: #22223b;
+      margin-bottom: 12px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    header p {
+      font-size: 1.15rem;
+      color: #6c757d;
+      font-weight: 500;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 48px auto 0 auto;
+      padding: 0 24px;
+    }
+
+    .project {
+      background: #fff;
+      padding: 28px 28px 20px 28px;
+      border-radius: 14px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #ececec;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .project:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+      transform: translateY(-3px) scale(1.01);
+    }
+
+    .project h2 {
+      color: #22223b;
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .project p {
       margin-bottom: 10px;
+      color: #444;
+      font-size: 1.05rem;
     }
-    p {
-      margin-bottom: 10px;
-      color: #d1d5db;
+
+    .project strong {
+      color: #2d72d9;
+      font-weight: 600;
     }
-    .back {
-      margin-top: 30px;
+
+    footer {
+      text-align: center;
+      padding: 28px 0 16px 0;
+      color: #b0b0b0;
+      font-size: 1rem;
+      background: #f7f7fa;
+      border-top: 1px solid #ececec;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .project h2 {
+        font-size: 1.2rem;
+      }
+      main {
+        padding: 0 8px;
+      }
+      .project {
+        padding: 18px 10px 14px 10px;
+      }
     }
   </style>
 </head>
