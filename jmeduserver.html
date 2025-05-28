@@ -8,68 +8,74 @@
     body {
       font-family: 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', Arial, sans-serif;
       background-color: #f7f7fa;
-      color: #22223b;
-      padding: 0;
-      margin: 0;
+      color: #222;
+      line-height: 1.7;
+      padding-bottom: 50px;
       min-height: 100vh;
     }
-
-    .container {
-      max-width: 900px;
-      margin: 48px auto 0 auto;
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      border: 1px solid #ececec;
-      padding: 40px 32px 32px 32px;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      color: #22223b;
-      margin-bottom: 18px;
-      font-weight: 700;
-      letter-spacing: -1px;
-      text-align: left;
-    }
-
-    h2 {
-      font-size: 1.3rem;
-      color: #22223b;
-      margin-top: 36px;
-      margin-bottom: 10px;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-    }
-
-    p {
-      margin-bottom: 12px;
-      color: #444;
-      font-size: 1.08rem;
-    }
-
-    ul, ol {
-      margin-bottom: 18px;
-      padding-left: 22px;
-    }
-
-    li {
-      margin-bottom: 6px;
-      color: #444;
-      font-size: 1.05rem;
-    }
-
     a {
       color: #2d72d9;
       text-decoration: none;
       transition: color 0.2s;
     }
-
     a:hover {
       text-decoration: underline;
       color: #174ea6;
     }
-
+    header {
+      background: #fff;
+      padding: 48px 20px 32px 20px;
+      text-align: center;
+      border-bottom: 1px solid #ececec;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    header h1 {
+      font-size: 2.2rem;
+      color: #22223b;
+      margin-bottom: 12px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #6c757d;
+      font-weight: 500;
+    }
+    main {
+      max-width: 900px;
+      margin: 48px auto 0 auto;
+      padding: 0 24px;
+    }
+    .section {
+      background: #fff;
+      padding: 28px 28px 20px 28px;
+      border-radius: 14px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #ececec;
+    }
+    h2, h3 {
+      color: #22223b;
+      margin-top: 32px;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+    p, li, td {
+      color: #444;
+      font-size: 1.05rem;
+    }
+    ul, ol {
+      padding-left: 22px;
+      margin-bottom: 12px;
+    }
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    }
     table {
       width: 100%;
       border-collapse: collapse;
@@ -77,158 +83,130 @@
       background: #fafbfc;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
     }
-
     th, td {
       border: 1px solid #ececec;
       padding: 10px;
       text-align: left;
-      font-size: 1rem;
     }
-
     th {
-      background-color: #f3f4f6;
+      background-color: #f2f4f8;
       color: #22223b;
       font-weight: 600;
     }
-
-    img {
-      max-width: 100%;
-      margin: 20px 0;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.06);
-      display: block;
-    }
-
     .back {
-      margin-top: 36px;
+      margin-top: 40px;
       text-align: left;
     }
-
-    .back a {
-      color: #888;
-      font-size: 1rem;
-      transition: color 0.2s;
-    }
-
-    .back a:hover {
-      color: #2d72d9;
-    }
-
     @media (max-width: 600px) {
-      .container {
-        padding: 18px 8px 18px 8px;
+      header h1 {
+        font-size: 1.5rem;
       }
-
-      h1 {
-        font-size: 1.3rem;
+      main {
+        padding: 0 8px;
       }
-
-      h2 {
+      .section {
+        padding: 14px 8px 10px 8px;
+      }
+      h2, h3 {
         font-size: 1.05rem;
       }
-
-      th, td {
+      table, th, td {
         font-size: 0.95rem;
-        padding: 6px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <header>
     <h1>JMEDUSERVER 프로젝트 상세</h1>
-
-    <p align="center">
-      <img src="imgs/screenshot-main.png" alt="메인 스크린샷">
-      <img src="imgs/kakaotalk-photo.jpeg" alt="카카오톡 알림 이미지" style="max-width:500px;">
-    </p>
-
-    <h2>프로젝트 구성원</h2>
-    <table>
-      <thead>
-        <tr><th>구성원</th><th>업무</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><a href="https://github.com/jgkim14">김준건 (jgkim14)</a></td><td>프로젝트 매니저, 백엔드</td></tr>
-        <tr><td><a href="https://github.com/CutTheWire">서정훈 (CutTheWire)</a></td><td>백엔드</td></tr>
-        <tr><td><a href="https://github.com/udongmandu">고범준 (udongmandu)</a></td><td>프론트엔드</td></tr>
-        <tr><td><a href="https://github.com/bel1c10ud">박종운 (bel1c10ud)</a></td><td>프론트엔드</td></tr>
-      </tbody>
-    </table>
-
-    <h2>학원의 문제점 및 요구사항 분석</h2>
-    <ul>
-      <li>자녀가 학원에 잘 도착했는지 알 수 없다.</li>
-      <li>수업 도중 무단 조퇴하는 학생이 있다.</li>
-      <li>출석부 관리를 자동화하고 싶다.</li>
-      <li>수업별로 학생, 학부모에게 단체 공지를 하고 싶다.</li>
-      <li>강의실 수 부족으로 일정 협의가 어렵다.</li>
-      <li>학생 개인정보 접근 로그를 남겨 법적 대응이 가능하도록 한다.</li>
-    </ul>
-
-    <h2>제공 솔루션</h2>
-    <ul>
-      <li>카카오 알림톡 및 SMS로 등/하원 통지</li>
-      <li>수업 시작 시 키오스크에서 등원 처리</li>
-      <li>무단 등원 적발 및 알림</li>
-      <li>출석부 자동 관리 및 확인 기능</li>
-      <li>수강 학생 대상 공지 전송 기능</li>
-      <li>개인정보 열람/수정 로그 기록</li>
-      <li>수업 중복 방지 일정 등록 시스템</li>
-    </ul>
-
-    <h2>시스템 구성 다이어그램</h2>
-    <img src="imgs/system-diagram.png" alt="시스템 구성도">
-
-    <ol>
-      <li>학부모에게 SMS 또는 알림톡 전송</li>
-      <li>학생이 QR코드 인식</li>
-      <li>등/하원 결과 안내</li>
-      <li>알리고 컨테이너로 데이터 전송</li>
-      <li>처리 결과 키오스크에 전송</li>
-      <li>관리 페이지 제공</li>
-      <li>React 페이지로 요청</li>
-      <li>학부모 연락처로 메시지 전송</li>
-      <li>직접 입력한 메시지 전송</li>
-      <li>학생 이름 반환</li>
-      <li>CRUD 작업 수행</li>
-    </ol>
-
-    <p>📦 <strong>Python Module GitHub:</strong> <a href="https://github.com/CutTheWire/ClassLinker" target="_blank">CutTheWire/ClassLinker</a></p>
-
-    <h2>Docker 컨테이너 구성</h2>
-    <ul>
-      <li><strong>NginX</strong>: 모든 요청 분배</li>
-      <li><strong>Aligo (Python)</strong>: QR 인식 → 알림 전송</li>
-      <li><strong>React</strong>: 키오스크 및 관리자 페이지 제공</li>
-      <li><strong>Node.js</strong>: 로그인, 수업관리, 공지, 개인정보 로그</li>
-      <li><strong>MySQL</strong>: 전체 데이터 저장</li>
-    </ul>
-
-    <h2>데이터베이스 구성</h2>
-    <img src="imgs/db-diagram.png" alt="데이터베이스 다이어그램">
-
-    <ul>
-      <li><code>school</code>: 학교 정보</li>
-      <li><code>student</code>: 학생 정보</li>
-      <li><code>teacher</code>: 강사 정보</li>
-      <li><code>attendence_log</code>: 등/하원 기록</li>
-      <li><code>admin_log</code>: 개인정보 접근 기록</li>
-      <li><code>teacher_attend_log</code>: 강사 출퇴근 기록</li>
-      <li><code>subject</code>: 과목 정보</li>
-      <li><code>plan</code>: 시간표</li>
-      <li><code>student_subject</code>: 수강 정보</li>
-      <li><code>subject_executed</code>: 수업 실행 기록</li>
-      <li><code>subject_executed_attenders</code>: 참여 학생 기록</li>
-      <li><code>permissions</code>: 권한 정보</li>
-      <li><code>serverconf</code>: 서버 설정</li>
-    </ul>
-
-    <div class="back">
-      <a href="index.html">← 돌아가기</a>
+    <p>학생관리시스템 서버 및 주요 기능 소개</p>
+  </header>
+  <main>
+    <div class="section">
+      <p align="center">
+        <img src="imgs/screenshot-main.png" alt="메인 스크린샷">
+        <img src="imgs/kakaotalk-photo.jpeg" alt="카카오톡 알림 이미지" width="500">
+      </p>
+      <h2>프로젝트 구성원</h2>
+      <table>
+        <thead>
+          <tr><th>구성원</th><th>업무</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="https://github.com/jgkim14">김준건 (jgkim14)</a></td><td>프로젝트 매니저, 백엔드</td></tr>
+          <tr><td><a href="https://github.com/CutTheWire">서정훈 (CutTheWire)</a></td><td>백엔드</td></tr>
+          <tr><td><a href="https://github.com/udongmandu">고범준 (udongmandu)</a></td><td>프론트엔드</td></tr>
+          <tr><td><a href="https://github.com/bel1c10ud">박종운 (bel1c10ud)</a></td><td>프론트엔드</td></tr>
+        </tbody>
+      </table>
+      <h2>학원의 문제점 및 요구사항 분석</h2>
+      <ul>
+        <li>자녀가 학원에 잘 도착했는지 알 수 없다.</li>
+        <li>수업 도중 무단 조퇴하는 학생이 있다.</li>
+        <li>출석부 관리를 자동화하고 싶다.</li>
+        <li>수업별로 학생, 학부모에게 단체 공지를 하고 싶다.</li>
+        <li>강의실 수 부족으로 일정 협의가 어렵다.</li>
+        <li>학생 개인정보 접근 로그를 남겨 법적 대응이 가능하도록 한다.</li>
+      </ul>
+      <h2>제공 솔루션</h2>
+      <ul>
+        <li>카카오 알림톡 및 SMS로 등/하원 통지</li>
+        <li>수업 시작 시 키오스크에서 등원 처리</li>
+        <li>무단 등원 적발 및 알림</li>
+        <li>출석부 자동 관리 및 확인 기능</li>
+        <li>수강 학생 대상 공지 전송 기능</li>
+        <li>개인정보 열람/수정 로그 기록</li>
+        <li>수업 중복 방지 일정 등록 시스템</li>
+      </ul>
+      <h2>시스템 구성 다이어그램</h2>
+      <img src="imgs/system-diagram.png" alt="시스템 구성도">
+      <ol>
+        <li>학부모에게 SMS 또는 알림톡 전송</li>
+        <li>학생이 QR코드 인식</li>
+        <li>등/하원 결과 안내</li>
+        <li>알리고 컨테이너로 데이터 전송</li>
+        <li>처리 결과 키오스크에 전송</li>
+        <li>관리 페이지 제공</li>
+        <li>React 페이지로 요청</li>
+        <li>학부모 연락처로 메시지 전송</li>
+        <li>직접 입력한 메시지 전송</li>
+        <li>학생 이름 반환</li>
+        <li>CRUD 작업 수행</li>
+      </ol>
+      <p>📦 <strong>Python Module GitHub:</strong> <a href="https://github.com/CutTheWire/ClassLinker" target="_blank">CutTheWire/ClassLinker</a></p>
+      <h2>Docker 컨테이너 구성</h2>
+      <ul>
+        <li><strong>NginX</strong>: 모든 요청 분배</li>
+        <li><strong>Aligo (Python)</strong>: QR 인식 → 알림 전송</li>
+        <li><strong>React</strong>: 키오스크 및 관리자 페이지 제공</li>
+        <li><strong>Node.js</strong>: 로그인, 수업관리, 공지, 개인정보 로그</li>
+        <li><strong>MySQL</strong>: 전체 데이터 저장</li>
+      </ul>
+      <h2>데이터베이스 구성</h2>
+      <img src="imgs/db-diagram.png" alt="데이터베이스 다이어그램">
+      <ul>
+        <li><code>school</code>: 학교 정보</li>
+        <li><code>student</code>: 학생 정보</li>
+        <li><code>teacher</code>: 강사 정보</li>
+        <li><code>attendence_log</code>: 등/하원 기록</li>
+        <li><code>admin_log</code>: 개인정보 접근 기록</li>
+        <li><code>teacher_attend_log</code>: 강사 출퇴근 기록</li>
+        <li><code>subject</code>: 과목 정보</li>
+        <li><code>plan</code>: 시간표</li>
+        <li><code>student_subject</code>: 수강 정보</li>
+        <li><code>subject_executed</code>: 수업 실행 기록</li>
+        <li><code>subject_executed_attenders</code>: 참여 학생 기록</li>
+        <li><code>permissions</code>: 권한 정보</li>
+        <li><code>serverconf</code>: 서버 설정</li>
+      </ul>
+      <div class="back">
+        <a href="index.html">← 돌아가기</a>
+      </div>
     </div>
-  </div>
+  </main>
+  <footer style="text-align:center; padding:28px 0 16px 0; color:#b0b0b0; font-size:1rem; background:#f7f7fa; border-top:1px solid #ececec; margin-top:48px;">
+    &copy; 2025 김준건. All rights reserved.
+  </footer>
 </body>
 </html>

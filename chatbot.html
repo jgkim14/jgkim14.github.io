@@ -5,45 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ChatBot 상세 설명</title>
   <style>
-    /* 노션 스타일 밝은 테마 적용 */
     body {
       font-family: 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', Arial, sans-serif;
       background-color: #f7f7fa;
-      color: #22223b;
-      padding: 0;
-      margin: 0;
+      color: #222;
+      line-height: 1.7;
+      padding-bottom: 50px;
       min-height: 100vh;
-    }
-    .container {
-      max-width: 800px;
-      margin: 48px auto 0 auto;
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      border: 1px solid #ececec;
-      padding: 40px 32px 32px 32px;
-    }
-    h1 {
-      font-size: 2.2rem;
-      color: #22223b;
-      margin-bottom: 18px;
-      font-weight: 700;
-      letter-spacing: -1px;
-      text-align: left;
-    }
-    p {
-      margin-bottom: 12px;
-      color: #444;
-      font-size: 1.08rem;
-    }
-    ul {
-      margin-bottom: 18px;
-      padding-left: 22px;
-    }
-    li {
-      margin-bottom: 6px;
-      color: #444;
-      font-size: 1.05rem;
     }
     a {
       color: #2d72d9;
@@ -54,44 +22,98 @@
       text-decoration: underline;
       color: #174ea6;
     }
+    header {
+      background: #fff;
+      padding: 48px 20px 32px 20px;
+      text-align: center;
+      border-bottom: 1px solid #ececec;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    header h1 {
+      font-size: 2.2rem;
+      color: #22223b;
+      margin-bottom: 12px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #6c757d;
+      font-weight: 500;
+    }
+    main {
+      max-width: 900px;
+      margin: 48px auto 0 auto;
+      padding: 0 24px;
+    }
+    .section {
+      background: #fff;
+      padding: 28px 28px 20px 28px;
+      border-radius: 14px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #ececec;
+    }
+    h2 {
+      color: #22223b;
+      margin-top: 32px;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+    p, li {
+      color: #444;
+      font-size: 1.05rem;
+    }
+    ul {
+      padding-left: 22px;
+      margin-bottom: 12px;
+    }
     .back {
-      margin-top: 36px;
+      margin-top: 30px;
       text-align: left;
     }
-    .back a {
-      color: #888;
-      font-size: 1rem;
-      transition: color 0.2s;
-    }
-    .back a:hover {
-      color: #2d72d9;
-    }
     @media (max-width: 600px) {
-      .container {
-        padding: 18px 8px 18px 8px;
+      header h1 {
+        font-size: 1.5rem;
       }
-      h1 {
-        font-size: 1.3rem;
+      main {
+        padding: 0 8px;
+      }
+      .section {
+        padding: 14px 8px 10px 8px;
+      }
+      h2 {
+        font-size: 1.05rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <header>
     <h1>ChatBot 프로젝트 상세</h1>
-    <p>사용자와 자연스럽게 대화할 수 있는 챗봇 프로젝트입니다. 다양한 백엔드 기술을 연동하여 확장 가능한 구조로 설계되었습니다.</p>
-    <p><strong>주요 기능:</strong></p>
-    <ul>
-      <li>Spring Boot와 FastAPI를 이용한 하이브리드 백엔드</li>
-      <li>MongoDB를 사용한 대화 로그 저장</li>
-      <li>React 기반의 실시간 프론트엔드</li>
-    </ul>
-    <p><strong>기술 스택:</strong> Spring Boot, FastAPI, MongoDB, React</p>
-    <p><a href="https://github.com/jgkim14/ChatBot" target="_blank">GitHub 저장소 보기</a></p>
-
-    <div class="back">
-      <a href="index.html">← 돌아가기</a>
+    <p>자연스러운 대화와 확장성을 갖춘 챗봇 시스템</p>
+  </header>
+  <main>
+    <div class="section">
+      <p>사용자와 자연스럽게 대화할 수 있는 챗봇 프로젝트입니다. 다양한 백엔드 기술을 연동하여 확장 가능한 구조로 설계되었습니다.</p>
+      <h2>주요 기능</h2>
+      <ul>
+        <li>Spring Boot와 FastAPI를 이용한 하이브리드 백엔드</li>
+        <li>MongoDB를 사용한 대화 로그 저장</li>
+        <li>React 기반의 실시간 프론트엔드</li>
+      </ul>
+      <h2>기술 스택</h2>
+      <p><strong>Spring Boot, FastAPI, MongoDB, React</strong></p>
+      <p><a href="https://github.com/jgkim14/ChatBot" target="_blank">GitHub 저장소 보기</a></p>
+      <div class="back">
+        <a href="index.html">← 돌아가기</a>
+      </div>
     </div>
-  </div>
+  </main>
+  <footer style="text-align:center; padding:28px 0 16px 0; color:#b0b0b0; font-size:1rem; background:#f7f7fa; border-top:1px solid #ececec; margin-top:48px;">
+    &copy; 2025 김준건. All rights reserved.
+  </footer>
 </body>
 </html>
