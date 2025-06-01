@@ -262,9 +262,22 @@
         <li><strong>2019.06</strong> - 청운대학교 청학동 스터디그룹 우수그룹상 수상 (팀장)</li>
         <li><strong>2019.08</strong> - 청운대학교 컴퓨터공학과 성적우수장학생 선정</li>
         <li><strong>2020.03</strong> - 청운대학교 컴퓨터공학과 성적우수장학생 선정</li>
-        <li><strong>2020.10</strong> - 한국인터넷방송통신학회(IIBC) 논문우수상 수상</li>
-        <li><strong>2022.02</strong> - KCI 논문 등재 : AR 플랫폼을 사용하지 않는 실제 방 기반 인테리어 시뮬레이션 연구</li>
-        <li><strong>2024.06</strong> - 프로젝트 외주 계약, 서비스 운영을 위한 기업 트리넛 설립</li>
+        <li><strong>2020.10</strong> - 
+  <a href="#" id="iibc-link" style="color:#2d72d9; text-decoration:underline;">
+    한국인터넷방송통신학회(IIBC) 논문우수상 수상
+  </a>
+</li>
+        <li><strong>2022.02</strong> - 
+      <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002813800" target="_blank" style="color:#2d72d9; text-decoration:underline;">
+        KCI 논문 등재 : AR 플랫폼을 사용하지 않는 실제 방 기반 인테리어 시뮬레이션 연구
+      </a>
+    </li>
+        <li><strong>2024.06</strong> - 
+  <a href="#" id="treenut-link" style="color:#2d72d9; text-decoration:underline;">
+    프로젝트 외주 계약, 서비스 운영을 위한 기업 트리넛 설립
+  </a>
+</li>
+        <li><strong>2024.12</strong> - 정보처리기사 자격증 취득 (2024년 3회차)</li>
         <li><strong>2025.02</strong> - 청운대학교 컴퓨터공학과 졸업 (평점 평균 3.9, 전공 3.83)</li>
       </ul>
     </div>
@@ -310,9 +323,6 @@
           <div class="stack-desc" style="margin-bottom:8px;">
             <strong>프로젝트 기간:</strong> 2024.06 - 서비스 중
           </div>
-          <div class="stack-desc" style="margin-bottom:8px;">
-            <strong>사용 기술:</strong> Node.js, React, MySQL, Docker
-          </div>
           <a href="https://github.com/jgkim14/JMEDUSERVER" target="_blank" style="font-size:0.98rem;">GitHub 저장소 바로가기</a>
         </div>
         <div class="stack-item" style="min-width:280px; max-width:48%;">
@@ -320,13 +330,10 @@
             <a href="chatbot.html" style="color:#2d72d9; text-decoration:none;">🤖💬 ChatBot</a>
           </div>
           <div class="stack-desc" style="margin-bottom:8px;">
-            사용자와 상호작용하는 챗봇 웹사이트 프로젝트입니다.
+            생성형 인공지능 대화 및 인공지능 캐릭터와 대화하는 챗봇 웹사이트 프로젝트입니다.
           </div>
           <div class="stack-desc" style="margin-bottom:8px;">
             <strong>프로젝트 기간:</strong> 2024.08 - 2025.05
-          </div>
-          <div class="stack-desc" style="margin-bottom:8px;">
-            <strong>사용 기술:</strong> Spring Boot, FastAPI, MongoDB, React
           </div>
           <a href="https://github.com/jgkim14/ChatBot" target="_blank" style="font-size:0.98rem;">GitHub 저장소 바로가기</a>
         </div>
@@ -338,5 +345,58 @@
     &copy; 2025 김준건. All rights reserved.
   </footer>
 
+  <div id="iibc-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.55); align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:18px 18px 10px 18px; max-width:90vw; max-height:90vh; position:relative; display:flex; flex-direction:column; align-items:center;">
+      <button id="iibc-close" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:2rem; color:#888; cursor:pointer;">&times;</button>
+      <img src="imgs/IIBC.png" alt="IIBC 논문우수상 이미지" style="max-width:80vw; max-height:70vh; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <div style="margin-top:8px; color:#444; font-size:1rem;">클릭하거나 ESC를 누르면 닫힙니다.</div>
+    </div>
+  </div>
+  <div id="treenut-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.55); align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:18px 18px 10px 18px; max-width:90vw; max-height:90vh; position:relative; display:flex; flex-direction:column; align-items:center;">
+      <button id="treenut-close" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:2rem; color:#888; cursor:pointer;">&times;</button>
+      <img src="imgs/treenut.png" alt="트리넛 설립 인증 이미지" style="max-width:80vw; max-height:70vh; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <div style="margin-top:8px; color:#444; font-size:1rem;">클릭하거나 ESC를 누르면 닫힙니다.</div>
+    </div>
+  </div>
+  <script>
+    const iibcLink = document.getElementById('iibc-link');
+    const iibcModal = document.getElementById('iibc-modal');
+    const iibcClose = document.getElementById('iibc-close');
+    iibcLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      iibcModal.style.display = 'flex';
+    });
+    iibcClose.addEventListener('click', function() {
+      iibcModal.style.display = 'none';
+    });
+    iibcModal.addEventListener('click', function(e) {
+      if (e.target === iibcModal) iibcModal.style.display = 'none';
+    });
+    document.addEventListener('keydown', function(e) {
+      if (iibcModal.style.display === 'flex' && e.key === 'Escape') {
+        iibcModal.style.display = 'none';
+      }
+    });
+
+    const treenutLink = document.getElementById('treenut-link');
+    const treenutModal = document.getElementById('treenut-modal');
+    const treenutClose = document.getElementById('treenut-close');
+    treenutLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      treenutModal.style.display = 'flex';
+    });
+    treenutClose.addEventListener('click', function() {
+      treenutModal.style.display = 'none';
+    });
+    treenutModal.addEventListener('click', function(e) {
+      if (e.target === treenutModal) treenutModal.style.display = 'none';
+    });
+    document.addEventListener('keydown', function(e) {
+      if (treenutModal.style.display === 'flex' && e.key === 'Escape') {
+        treenutModal.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
