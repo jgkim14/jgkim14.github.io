@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ChatBot 상세 설명</title>
+  <title>ChatBot</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', Arial, sans-serif;
       background-color: #f7f7fa;
@@ -46,73 +47,242 @@
       margin: 48px auto 0 auto;
       padding: 0 24px;
     }
-    .section {
+    .project-section {
       background: #fff;
       padding: 28px 28px 20px 28px;
       border-radius: 14px;
       margin-bottom: 32px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
       border: 1px solid #ececec;
+      transition: box-shadow 0.2s, transform 0.2s;
     }
-    h2 {
+    .project-section:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+      transform: translateY(-3px) scale(1.01);
+    }
+    .project-section h2 {
       color: #22223b;
-      margin-top: 32px;
-      margin-bottom: 10px;
       font-size: 1.3rem;
+      margin-bottom: 8px;
       font-weight: 600;
       letter-spacing: -0.5px;
+      margin-top: 24px;
     }
-    p, li {
+    .project-section p, .project-section li, .project-section td {
       color: #444;
       font-size: 1.05rem;
+      margin-bottom: 8px;
     }
-    ul {
-      padding-left: 22px;
-      margin-bottom: 12px;
+    .project-section strong {
+      color: #2d72d9;
+      font-weight: 600;
+    }
+    ul, ol { padding-left: 22px; margin-bottom: 12px; }
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: #fafbfc;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      border: 1px solid #ececec;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f4f8;
+      color: #22223b;
+      font-weight: 600;
     }
     .back {
       margin-top: 30px;
       text-align: left;
     }
+    .stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .stack-item {
+      background: #f4f8fd;
+      border: 1px solid #e3eaf5;
+      border-radius: 10px;
+      padding: 16px 18px 12px 18px;
+      min-width: 180px;
+      flex: 1 1 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 0 2px 8px rgba(45,114,217,0.04);
+      transition: box-shadow 0.2s;
+    }
+    .stack-item:hover {
+      box-shadow: 0 6px 18px rgba(45,114,217,0.10);
+    }
+    .stack-name {
+      font-weight: 700;
+      color: #2d72d9;
+      font-size: 1.08rem;
+      margin-bottom: 4px;
+    }
+    .stack-desc {
+      color: #444;
+      font-size: 0.98rem;
+    }
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
+      header h1 { font-size: 1.5rem; }
+      main { padding: 0 8px; }
+      .project-section { padding: 14px 8px 10px 8px; }
+      .project-section h2 { font-size: 1.05rem; }
+      table, th, td { font-size: 0.95rem; }
+    }
+    @media (max-width: 700px) {
+      .stack-list {
+        flex-direction: column;
+        gap: 10px;
       }
-      main {
-        padding: 0 8px;
-      }
-      .section {
-        padding: 14px 8px 10px 8px;
-      }
-      h2 {
-        font-size: 1.05rem;
+      .stack-item {
+        min-width: 0;
+        width: 100%;
+        flex: none !important;
+        padding: 12px 12px 10px 12px !important;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>ChatBot 프로젝트 상세</h1>
-    <p>자연스러운 대화와 확장성을 갖춘 챗봇 시스템</p>
+    <h1>
+      <a href="index.html" style="color:inherit; text-decoration:none; cursor:pointer;">
+        김준건의 포트폴리오
+      </a>
+    </h1>
+    <p>AI 챗봇 서버 및 주요 기능 소개</p>
   </header>
   <main>
-    <div class="section">
-      <p>사용자와 자연스럽게 대화할 수 있는 챗봇 프로젝트입니다. 다양한 백엔드 기술을 연동하여 확장 가능한 구조로 설계되었습니다.</p>
-      <h2>주요 기능</h2>
-      <ul>
-        <li>Spring Boot와 FastAPI를 이용한 하이브리드 백엔드</li>
-        <li>MongoDB를 사용한 대화 로그 저장</li>
-        <li>React 기반의 실시간 프론트엔드</li>
-      </ul>
-      <h2>기술 스택</h2>
-      <p><strong>Spring Boot, FastAPI, MongoDB, React</strong></p>
-      <p><a href="https://github.com/jgkim14/ChatBot" target="_blank">GitHub 저장소 보기</a></p>
-      <div class="back">
-        <a href="index.html">← 돌아가기</a>
+    <div class="project-section" style="text-align:center; padding-top:28px; padding-bottom:24px;">
+      <img src="imgs/characterchat-banner.png" alt="메인 스크린샷" style="max-width:100%; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin-bottom:0;">
+    </div>
+
+    <div class="project-section">
+      <h2>프로젝트 개요</h2>
+      <p>
+        <strong>TreeNut AI ChatBot</strong>은 TreeNut 팀이 직접 모델 학습을 시켜 캐릭터 챗을 서비스하는 대화형 인공지능 LLM 서비스입니다.
+      </p>
+      <p>
+        <a href="https://github.com/jgkim14/ChatBot" target="_blank">GitHub 저장소 바로가기</a>
+      </p>
+    </div>
+
+    <div class="project-section" style="padding-top:18px; padding-bottom:18px;">
+      <h2>👊 사용 기술</h2>
+      <div class="stack-list">
+        <div class="stack-item">
+          <div class="stack-name">☕ Spring Boot</div>
+          <div class="stack-desc">유저, 채팅기록 불러내기 등 백엔드 서버에 사용</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">⚡ FastAPI</div>
+          <div class="stack-desc">AI 서버와의 질문, 답변을 전달하기 위해 사용</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">🐬 MySQL</div>
+          <div class="stack-desc">유저 정보, MongoDB 채팅 기록 ID 저장에 사용</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">🐳 Docker</div>
+          <div class="stack-desc">컨테이너 기반의 배포 및 환경 관리에 사용</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">⚛️ React</div>
+          <div class="stack-desc">ChatBot 서비스, 관리 프론트 페이지 제작에 사용</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">🌱 Node.js</div>
+          <div class="stack-desc">ChatBot 데이터 관리 전용 서버에서 사용</div>
+        </div>
       </div>
     </div>
+
+    <div class="project-section">
+      <h2>프로젝트 구성원</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>구성원</th>
+            <th>업무</th>
+            <th>사용 기술</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://github.com/jgkim14">김준건 (jgkim14)</a></td>
+            <td>백엔드</td>
+            <td>Spring Boot, Node.js</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/CutTheWire">서정훈 (CutTheWire)</a></td>
+            <td>백엔드</td>
+            <td>FastAPI</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/qwer9679">이준호 (qwer9679)</a></td>
+            <td>백엔드</td>
+            <td>Spring Boot, FastAPI</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Flattt12">모현준 (Flattt12)</a></td>
+            <td>백엔드</td>
+            <td>Spring Boot</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/donismoney">권재현 (donismoney)</a></td>
+            <td>백엔드</td>
+            <td>Spring Boot</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/GingGang">손유노 (GingGang)</a></td>
+            <td>프론트엔드</td>
+            <td>React, TypeScript</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 style="margin-top:32px;">도움을 주신 분</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>👍 <a href="https://github.com/zbezdac1f">오동현 (zbezdac1f)</a>, <a href="https://github.com/odh1231">odh1231</a></td>
+          </tr>
+          <tr>
+            <td>👍 <a href="https://github.com/Seonghyeon8983">백성현 (Seonghyeon8983)</a></td>
+          </tr>
+          <tr>
+            <td>👍 <a href="https://github.com/dlackdanr777">임창묵 (dlackdanr777)</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="project-section" style="text-align:center; padding-top:28px; padding-bottom:24px;">
+      <h2 style="text-align:left; margin-left:0;">시스템 아키텍쳐 다이어그램</h2>
+      <img src="imgs/ChatBot.png" alt="ChatBot 시스템 아키텍쳐 다이어그램" style="max-width:100%; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    </div>
+
+    <div class="project-section back">
+      <a href="index.html">← 돌아가기</a>
+    </div>
   </main>
-  <footer style="text-align:center; padding:28px 0 16px 0; color:#b0b0b0; font-size:1rem; background:#f7f7fa; border-top:1px solid #ececec; margin-top:48px;">
+  <footer>
     &copy; 2025 김준건. All rights reserved.
   </footer>
 </body>

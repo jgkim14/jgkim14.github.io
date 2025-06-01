@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JMEDUSERVER 상세 설명</title>
+  <title>JMEDUSERVER</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', Arial, sans-serif;
       background-color: #f7f7fa;
@@ -46,30 +47,37 @@
       margin: 48px auto 0 auto;
       padding: 0 24px;
     }
-    .section {
+    .project-section {
       background: #fff;
       padding: 28px 28px 20px 28px;
       border-radius: 14px;
       margin-bottom: 32px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
       border: 1px solid #ececec;
+      transition: box-shadow 0.2s, transform 0.2s;
     }
-    h2, h3 {
+    .project-section:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+      transform: translateY(-3px) scale(1.01);
+    }
+    .project-section h2 {
       color: #22223b;
-      margin-top: 32px;
-      margin-bottom: 10px;
       font-size: 1.3rem;
+      margin-bottom: 8px;
       font-weight: 600;
       letter-spacing: -0.5px;
+      margin-top: 24px;
     }
-    p, li, td {
+    .project-section p, .project-section li, .project-section td {
       color: #444;
       font-size: 1.05rem;
+      margin-bottom: 8px;
     }
-    ul, ol {
-      padding-left: 22px;
-      margin-bottom: 12px;
+    .project-section strong {
+      color: #2d72d9;
+      font-weight: 600;
     }
+    ul, ol { padding-left: 22px; margin-bottom: 12px; }
     img {
       max-width: 100%;
       margin: 20px 0;
@@ -95,39 +103,121 @@
       font-weight: 600;
     }
     .back {
-      margin-top: 40px;
+      margin-top: 30px;
       text-align: left;
     }
+    .stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .stack-item {
+      background: #f4f8fd;
+      border: 1px solid #e3eaf5;
+      border-radius: 10px;
+      padding: 16px 18px 12px 18px;
+      min-width: 180px;
+      flex: 1 1 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 0 2px 8px rgba(45,114,217,0.04);
+      transition: box-shadow 0.2s;
+    }
+    .stack-item:hover {
+      box-shadow: 0 6px 18px rgba(45,114,217,0.10);
+    }
+    .stack-name {
+      font-weight: 700;
+      color: #2d72d9;
+      font-size: 1.08rem;
+      margin-bottom: 4px;
+    }
+    .stack-desc {
+      color: #444;
+      font-size: 0.98rem;
+    }
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
+      header h1 { font-size: 1.5rem; }
+      main { padding: 0 8px; }
+      .project-section { padding: 14px 8px 10px 8px; }
+      .project-section h2 { font-size: 1.05rem; }
+      table, th, td { font-size: 0.95rem; }
+    }
+    @media (max-width: 700px) {
+      .stack-list {
+        flex-direction: column;
+        gap: 10px;
       }
-      main {
-        padding: 0 8px;
-      }
-      .section {
-        padding: 14px 8px 10px 8px;
-      }
-      h2, h3 {
-        font-size: 1.05rem;
-      }
-      table, th, td {
-        font-size: 0.95rem;
+      .stack-item {
+        min-width: 0;
+        width: 100%;
+        flex: none !important;
+        padding: 12px 12px 10px 12px !important;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>JMEDUSERVER 프로젝트 상세</h1>
+    <h1>
+      <a href="index.html" style="color:inherit; text-decoration:none; cursor:pointer;">
+        김준건의 포트폴리오
+      </a>
+    </h1>
     <p>학생관리시스템 서버 및 주요 기능 소개</p>
   </header>
   <main>
-    <div class="section">
+    <!-- 메인 스크린샷 박스를 프로젝트 개요 위로 이동 -->
+    <div class="project-section" style="text-align:center; padding-top:28px; padding-bottom:24px;">
+      <img src="imgs/screenshot-main.png" alt="메인 스크린샷" style="max-width:100%; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin-bottom:0;">
+    </div>
+
+    <div class="project-section">
+      <h2>프로젝트 개요</h2>
+      <p>
+        <strong>JMEDUSERVER</strong>는 학생 정보 관리와 출결, 공지, 개인정보 로그 등 학원 운영에 필요한 다양한 기능을 제공하는 서버 시스템입니다.
+      </p>
+      <p>
+        <a href="https://github.com/jgkim14/JMEDUSERVER" target="_blank">GitHub 저장소 바로가기</a>
+      </p>
+    </div>
+
+    <div class="project-section" style="padding-top:18px; padding-bottom:18px;">
+      <h2>👊 사용 기술</h2>
+      <div class="stack-list">
+        <div class="stack-item">
+          <div class="stack-name">🌱 Node.js</div>
+          <div class="stack-desc">비동기 이벤트 기반의 고성능 서버 개발</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">⚡ FastAPI</div>
+          <div class="stack-desc">안정적인 백엔드 서비스 구현</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">🐬 MySQL</div>
+          <div class="stack-desc">관계형 데이터베이스 설계 및 운영</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">🐳 Docker</div>
+          <div class="stack-desc">컨테이너 기반의 배포 및 환경 관리</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">⚛️ React</div>
+          <div class="stack-desc">관리자/키오스크 프론트엔드 UI</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2>주요 화면</h2>
       <p align="center">
-        <img src="imgs/screenshot-main.png" alt="메인 스크린샷">
         <img src="imgs/kakaotalk-photo.jpeg" alt="카카오톡 알림 이미지" width="500">
       </p>
+    </div>
+
+    <div class="project-section">
       <h2>프로젝트 구성원</h2>
       <table>
         <thead>
@@ -140,6 +230,9 @@
           <tr><td><a href="https://github.com/bel1c10ud">박종운 (bel1c10ud)</a></td><td>프론트엔드</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="project-section">
       <h2>학원의 문제점 및 요구사항 분석</h2>
       <ul>
         <li>자녀가 학원에 잘 도착했는지 알 수 없다.</li>
@@ -149,6 +242,9 @@
         <li>강의실 수 부족으로 일정 협의가 어렵다.</li>
         <li>학생 개인정보 접근 로그를 남겨 법적 대응이 가능하도록 한다.</li>
       </ul>
+    </div>
+
+    <div class="project-section">
       <h2>제공 솔루션</h2>
       <ul>
         <li>카카오 알림톡 및 SMS로 등/하원 통지</li>
@@ -159,6 +255,9 @@
         <li>개인정보 열람/수정 로그 기록</li>
         <li>수업 중복 방지 일정 등록 시스템</li>
       </ul>
+    </div>
+
+    <div class="project-section">
       <h2>시스템 구성 다이어그램</h2>
       <img src="imgs/system-diagram.png" alt="시스템 구성도">
       <ol>
@@ -175,6 +274,9 @@
         <li>CRUD 작업 수행</li>
       </ol>
       <p>📦 <strong>Python Module GitHub:</strong> <a href="https://github.com/CutTheWire/ClassLinker" target="_blank">CutTheWire/ClassLinker</a></p>
+    </div>
+
+    <div class="project-section">
       <h2>Docker 컨테이너 구성</h2>
       <ul>
         <li><strong>NginX</strong>: 모든 요청 분배</li>
@@ -183,6 +285,9 @@
         <li><strong>Node.js</strong>: 로그인, 수업관리, 공지, 개인정보 로그</li>
         <li><strong>MySQL</strong>: 전체 데이터 저장</li>
       </ul>
+    </div>
+
+    <div class="project-section">
       <h2>데이터베이스 구성</h2>
       <img src="imgs/db-diagram.png" alt="데이터베이스 다이어그램">
       <ul>
@@ -200,12 +305,13 @@
         <li><code>permissions</code>: 권한 정보</li>
         <li><code>serverconf</code>: 서버 설정</li>
       </ul>
-      <div class="back">
-        <a href="index.html">← 돌아가기</a>
-      </div>
+    </div>
+
+    <div class="project-section back">
+      <a href="index.html">← 돌아가기</a>
     </div>
   </main>
-  <footer style="text-align:center; padding:28px 0 16px 0; color:#b0b0b0; font-size:1rem; background:#f7f7fa; border-top:1px solid #ececec; margin-top:48px;">
+  <footer>
     &copy; 2025 김준건. All rights reserved.
   </footer>
 </body>
