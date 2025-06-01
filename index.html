@@ -313,9 +313,10 @@
     <div class="project" style="margin-bottom:32px;">
       <h2>📁 수행한 프로젝트</h2>
       <div class="stack-list project-stack-list" style="justify-content:center; gap:24px;">
-        <div class="stack-item" style="min-width:280px; max-width:48%;">
+        <!-- JMEDUSERVER 박스 -->
+        <div class="stack-item project-card" data-href="jmeduserver.html" style="min-width:280px; max-width:48%; cursor:pointer; position:relative;">
           <div class="stack-name" style="font-size:1.18rem;">
-            <a href="jmeduserver.html" style="color:#2d72d9; text-decoration:none;">🖥️ JMEDUSERVER</a>
+            <a href="jmeduserver.html" style="color:#2d72d9; text-decoration:none; pointer-events:none;">🖥️ JMEDUSERVER</a>
           </div>
           <div class="stack-desc" style="margin-bottom:8px;">
             제이엠에듀 학생관리시스템 서버로, 학생 정보 관리 및 관련 기능을 제공합니다.
@@ -323,11 +324,12 @@
           <div class="stack-desc" style="margin-bottom:8px;">
             <strong>프로젝트 기간:</strong> 2024.06 - 서비스 중
           </div>
-          <a href="https://github.com/jgkim14/JMEDUSERVER" target="_blank" style="font-size:0.98rem;">GitHub 저장소 바로가기</a>
+          <a href="https://github.com/jgkim14/JMEDUSERVER" target="_blank" style="font-size:0.98rem; position:relative; z-index:2;">GitHub 저장소 바로가기</a>
         </div>
-        <div class="stack-item" style="min-width:280px; max-width:48%;">
+        <!-- ChatBot 박스 -->
+        <div class="stack-item project-card" data-href="chatbot.html" style="min-width:280px; max-width:48%; cursor:pointer; position:relative;">
           <div class="stack-name" style="font-size:1.18rem;">
-            <a href="chatbot.html" style="color:#2d72d9; text-decoration:none;">🤖💬 ChatBot</a>
+            <a href="chatbot.html" style="color:#2d72d9; text-decoration:none; pointer-events:none;">🤖💬 ChatBot</a>
           </div>
           <div class="stack-desc" style="margin-bottom:8px;">
             생성형 인공지능 대화 및 인공지능 캐릭터와 대화하는 챗봇 웹사이트 프로젝트입니다.
@@ -335,7 +337,7 @@
           <div class="stack-desc" style="margin-bottom:8px;">
             <strong>프로젝트 기간:</strong> 2024.08 - 2025.05
           </div>
-          <a href="https://github.com/jgkim14/ChatBot" target="_blank" style="font-size:0.98rem;">GitHub 저장소 바로가기</a>
+          <a href="https://github.com/jgkim14/ChatBot" target="_blank" style="font-size:0.98rem; position:relative; z-index:2;">GitHub 저장소 바로가기</a>
         </div>
       </div>
     </div>
@@ -396,6 +398,19 @@
       if (treenutModal.style.display === 'flex' && e.key === 'Escape') {
         treenutModal.style.display = 'none';
       }
+    });
+
+    // 박스 전체 클릭 시 상세 페이지 이동, 단 GitHub 링크 클릭 시에는 이동하지 않음
+    document.querySelectorAll('.project-card').forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        // GitHub 저장소 바로가기 클릭 시 무시
+        if (e.target.tagName === 'A' && e.target.getAttribute('href') && e.target.getAttribute('href').startsWith('http')) {
+          e.stopPropagation();
+          return;
+        }
+        // 상세 페이지로 이동
+        window.location.href = card.getAttribute('data-href');
+      });
     });
   </script>
 </body>
