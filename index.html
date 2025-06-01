@@ -280,9 +280,21 @@
       <ul style="margin:0; padding-left:20px; color:#444; font-size:1.05rem;">
         <li><strong>2018.02</strong> - 인하대학교사범대학부속고등학교 졸업</li>
         <li><strong>2019.03</strong> - 청운대학교 컴퓨터공학과 입학</li>
-        <li><strong>2019.06</strong> - 청운대학교 청학동 스터디그룹 우수그룹상 수상 (팀장)</li>
-        <li><strong>2019.08</strong> - 청운대학교 컴퓨터공학과 성적우수장학생 선정</li>
-        <li><strong>2020.03</strong> - 청운대학교 컴퓨터공학과 성적우수장학생 선정</li>
+        <li><strong>2019.06</strong> - 
+  <a href="#" id="chd-link" style="color:#2d72d9; text-decoration:underline;">
+    청운대학교 청학동 스터디그룹 우수그룹상 수상 (팀장)
+  </a>
+</li>
+        <li><strong>2019.08</strong> - 
+  <a href="#" id="grade1-link" style="color:#2d72d9; text-decoration:underline;">
+    청운대학교 컴퓨터공학과 성적우수장학생 선정
+  </a>
+</li>
+        <li><strong>2020.03</strong> - 
+  <a href="#" id="grade2-link" style="color:#2d72d9; text-decoration:underline;">
+    청운대학교 컴퓨터공학과 성적우수장학생 선정
+  </a>
+</li>
         <li><strong>2020.10</strong> - 
   <a href="#" id="iibc-link" style="color:#2d72d9; text-decoration:underline;">
     한국인터넷방송통신학회(IIBC) 논문우수상 수상
@@ -393,6 +405,27 @@
       <div style="margin-top:8px; color:#444; font-size:1rem;">클릭하거나 ESC를 누르면 닫힙니다.</div>
     </div>
   </div>
+  <div id="chd-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.55); align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:18px 18px 10px 18px; max-width:90vw; max-height:90vh; position:relative; display:flex; flex-direction:column; align-items:center;">
+      <button id="chd-close" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:2rem; color:#888; cursor:pointer;">&times;</button>
+      <img src="imgs/chd.png" alt="청학동 스터디그룹 우수그룹상 이미지" style="max-width:80vw; max-height:70vh; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <div style="margin-top:8px; color:#444; font-size:1rem;">클릭하거나 ESC를 누르면 닫힙니다.</div>
+    </div>
+  </div>
+  <div id="grade1-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.55); align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:18px 18px 10px 18px; max-width:90vw; max-height:90vh; position:relative; display:flex; flex-direction:column; align-items:center;">
+      <button id="grade1-close" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:2rem; color:#888; cursor:pointer;">&times;</button>
+      <img src="imgs/grade1.png" alt="2019년 8월 성적우수장학생 인증 이미지" style="max-width:80vw; max-height:70vh; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <div style="margin-top:8px; color:#444; font-size:1rem;">클릭하거나 ESC를 누르면 닫힙니다.</div>
+    </div>
+  </div>
+  <div id="grade2-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.55); align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:18px 18px 10px 18px; max-width:90vw; max-height:90vh; position:relative; display:flex; flex-direction:column; align-items:center;">
+      <button id="grade2-close" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:2rem; color:#888; cursor:pointer;">&times;</button>
+      <img src="imgs/grade2.png" alt="2020년 3월 성적우수장학생 인증 이미지" style="max-width:80vw; max-height:70vh; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <div style="margin-top:8px; color:#444; font-size:1rem;">클릭하거나 ESC를 누르면 닫힙니다.</div>
+    </div>
+  </div>
   <script>
     const iibcLink = document.getElementById('iibc-link');
     const iibcModal = document.getElementById('iibc-modal');
@@ -448,6 +481,63 @@
     document.addEventListener('keydown', function(e) {
       if (eipModal.style.display === 'flex' && e.key === 'Escape') {
         eipModal.style.display = 'none';
+      }
+    });
+
+    const chdLink = document.getElementById('chd-link');
+    const chdModal = document.getElementById('chd-modal');
+    const chdClose = document.getElementById('chd-close');
+    chdLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      chdModal.style.display = 'flex';
+    });
+    chdClose.addEventListener('click', function() {
+      chdModal.style.display = 'none';
+    });
+    chdModal.addEventListener('click', function(e) {
+      if (e.target === chdModal) chdModal.style.display = 'none';
+    });
+    document.addEventListener('keydown', function(e) {
+      if (chdModal.style.display === 'flex' && e.key === 'Escape') {
+        chdModal.style.display = 'none';
+      }
+    });
+
+    const grade1Link = document.getElementById('grade1-link');
+    const grade1Modal = document.getElementById('grade1-modal');
+    const grade1Close = document.getElementById('grade1-close');
+    grade1Link.addEventListener('click', function(e) {
+      e.preventDefault();
+      grade1Modal.style.display = 'flex';
+    });
+    grade1Close.addEventListener('click', function() {
+      grade1Modal.style.display = 'none';
+    });
+    grade1Modal.addEventListener('click', function(e) {
+      if (e.target === grade1Modal) grade1Modal.style.display = 'none';
+    });
+    document.addEventListener('keydown', function(e) {
+      if (grade1Modal.style.display === 'flex' && e.key === 'Escape') {
+        grade1Modal.style.display = 'none';
+      }
+    });
+
+    const grade2Link = document.getElementById('grade2-link');
+    const grade2Modal = document.getElementById('grade2-modal');
+    const grade2Close = document.getElementById('grade2-close');
+    grade2Link.addEventListener('click', function(e) {
+      e.preventDefault();
+      grade2Modal.style.display = 'flex';
+    });
+    grade2Close.addEventListener('click', function() {
+      grade2Modal.style.display = 'none';
+    });
+    grade2Modal.addEventListener('click', function(e) {
+      if (e.target === grade2Modal) grade2Modal.style.display = 'none';
+    });
+    document.addEventListener('keydown', function(e) {
+      if (grade2Modal.style.display === 'flex' && e.key === 'Escape') {
+        grade2Modal.style.display = 'none';
       }
     });
 
