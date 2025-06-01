@@ -277,7 +277,11 @@
     프로젝트 외주 계약, 서비스 운영을 위한 기업 트리넛 설립
   </a>
 </li>
-        <li><strong>2024.12</strong> - 정보처리기사 자격증 취득 (2024년 3회차)</li>
+        <li><strong>2024.12</strong> - 
+  <a href="#" id="eip-link" style="color:#2d72d9; text-decoration:underline;">
+    정보처리기사 자격증 취득 (2024년 3회차)
+  </a>
+</li>
         <li><strong>2025.02</strong> - 청운대학교 컴퓨터공학과 졸업 (평점 평균 3.9, 전공 3.83)</li>
       </ul>
     </div>
@@ -361,6 +365,13 @@
       <div style="margin-top:8px; color:#444; font-size:1rem;">클릭하거나 ESC를 누르면 닫힙니다.</div>
     </div>
   </div>
+  <div id="eip-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.55); align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:18px 18px 10px 18px; max-width:90vw; max-height:90vh; position:relative; display:flex; flex-direction:column; align-items:center;">
+      <button id="eip-close" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:2rem; color:#888; cursor:pointer;">&times;</button>
+      <img src="imgs/EIP.png" alt="정보처리기사 자격증 이미지" style="max-width:80vw; max-height:70vh; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <div style="margin-top:8px; color:#444; font-size:1rem;">클릭하거나 ESC를 누르면 닫힙니다.</div>
+    </div>
+  </div>
   <script>
     const iibcLink = document.getElementById('iibc-link');
     const iibcModal = document.getElementById('iibc-modal');
@@ -397,6 +408,25 @@
     document.addEventListener('keydown', function(e) {
       if (treenutModal.style.display === 'flex' && e.key === 'Escape') {
         treenutModal.style.display = 'none';
+      }
+    });
+
+    const eipLink = document.getElementById('eip-link');
+    const eipModal = document.getElementById('eip-modal');
+    const eipClose = document.getElementById('eip-close');
+    eipLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      eipModal.style.display = 'flex';
+    });
+    eipClose.addEventListener('click', function() {
+      eipModal.style.display = 'none';
+    });
+    eipModal.addEventListener('click', function(e) {
+      if (e.target === eipModal) eipModal.style.display = 'none';
+    });
+    document.addEventListener('keydown', function(e) {
+      if (eipModal.style.display === 'flex' && e.key === 'Escape') {
+        eipModal.style.display = 'none';
       }
     });
 
