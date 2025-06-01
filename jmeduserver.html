@@ -191,7 +191,7 @@
         <img src="imgs/kakaotalk-photo.jpeg" alt="카카오톡 알림 이미지" width="500">
       </p>
     </div>
-    
+
     <div class="project-section" style="text-align:center; padding-top:24px; padding-bottom:24px;">
   <h2 style="text-align:left;">시연 영상</h2>
   <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); background:#000;">
@@ -214,23 +214,23 @@
       <div class="stack-list">
         <div class="stack-item">
           <div class="stack-name">🌱 Node.js</div>
-          <div class="stack-desc">비동기 이벤트 기반의 고성능 서버 개발</div>
+          <div class="stack-desc">학생 관리를 위한 메인 서버를 만들기 위해 사용</div>
         </div>
         <div class="stack-item">
           <div class="stack-name">⚡ FastAPI</div>
-          <div class="stack-desc">안정적인 백엔드 서비스 구현</div>
+          <div class="stack-desc">키오스크와 aligo Docker 컨테이너에 사용. MySQL에서 코드와 매칭되는 학생 정보와 학부모 연락처를 찾아 aligo를 통해 전송</div>
         </div>
         <div class="stack-item">
           <div class="stack-name">🐬 MySQL</div>
-          <div class="stack-desc">관계형 데이터베이스 설계 및 운영</div>
+          <div class="stack-desc">학생 및 학부모의 연락처, 고유 QR코드 저장에 사용</div>
         </div>
         <div class="stack-item">
           <div class="stack-name">🐳 Docker</div>
-          <div class="stack-desc">컨테이너 기반의 배포 및 환경 관리</div>
+          <div class="stack-desc">컨테이너 기반의 배포 및 관리를 위해 사용</div>
         </div>
         <div class="stack-item">
           <div class="stack-name">⚛️ React</div>
-          <div class="stack-desc">관리자/키오스크 프론트엔드 UI</div>
+          <div class="stack-desc">관리자/키오스크 프론트엔드 UI 제작에 사용</div>
         </div>
       </div>
     </div>
@@ -296,13 +296,36 @@
 
     <div class="project-section">
       <h2>Docker 컨테이너 구성</h2>
-      <ul>
-        <li><strong>NginX</strong>: 모든 요청 분배</li>
-        <li><strong>Aligo (Python)</strong>: QR 인식 → 알림 전송</li>
-        <li><strong>React</strong>: 키오스크 및 관리자 페이지 제공</li>
-        <li><strong>Node.js</strong>: 로그인, 수업관리, 공지, 개인정보 로그</li>
-        <li><strong>MySQL</strong>: 전체 데이터 저장</li>
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>컨테이너</th>
+            <th>설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NginX</td>
+            <td>모든 요청 분배</td>
+          </tr>
+          <tr>
+            <td>Aligo (Python)</td>
+            <td>QR 인식 → 알림 전송</td>
+          </tr>
+          <tr>
+            <td>React</td>
+            <td>키오스크 및 관리자 페이지 제공</td>
+          </tr>
+          <tr>
+            <td>Node.js</td>
+            <td>로그인, 수업관리, 공지, 개인정보 로그</td>
+          </tr>
+          <tr>
+            <td>MySQL</td>
+            <td>전체 데이터 저장</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="project-section">
