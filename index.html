@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>김준건의 포트폴리오</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png">
+  <link rel="shortcut icon" href="favicon/favicon.ico">
   <style>
     * {
       margin: 0;
@@ -276,7 +283,7 @@
 
     <!-- 약력 박스 -->
     <div class="project" style="margin-top:0; margin-bottom:18px;">
-      <h2>📝 약력</h2>
+      <h2>📝 약력 및 수상 내역</h2>
       <ul style="margin:0; padding-left:20px; color:#444; font-size:1.05rem;">
         <li><strong>2018.02</strong> - 인하대학교사범대학부속고등학교 졸업</li>
         <li><strong>2019.03</strong> - 청운대학교 컴퓨터공학과 입학</li>
@@ -378,6 +385,50 @@
         </div>
       </div>
     </div>
+
+
+    <!-- 수행한 과제 박스 -->
+    <div class="project" style="margin-bottom:32px;">
+      <h2>📚 전공 외 수행한 학교 과제</h2>
+      <div class="stack-list project-stack-list" style="justify-content:center; gap:24px;">
+        <!-- D-LOG 박스 -->
+        <div class="stack-item project-card" id="dlog-card" style="min-width:280px; max-width:48%; cursor:pointer; position:relative;">
+          <div class="stack-name" style="font-size:1.18rem;">
+            <a href="#" id="dlog-link" style="color:#2d72d9; text-decoration:none; pointer-events:none;">🚗 D-LOG Backend</a>
+          </div>
+          <div class="stack-desc" style="margin-bottom:8px;">
+            유니티 기반 레이싱 게임 D-LOG의 로그인 및 타임어택 기록 저장 백엔드 서버 및 영상 제작
+          </div>
+          <div class="stack-desc" style="margin-bottom:8px;">
+            <strong>과제 수행월:</strong> 2020.06
+          </div>
+        </div>
+        <!-- ESG 박스: id 추가 및 data-href 제거 -->
+        <div class="stack-item project-card" id="esg-card" style="min-width:280px; max-width:48%; cursor:pointer; position:relative;">
+          <div class="stack-name" style="font-size:1.18rem;">
+            <a href="#" id="esg-link" style="color:#2d72d9; text-decoration:none; pointer-events:none;">🍱 ESG 이모네 반찬 홍보영상 제작</a>
+          </div>
+          <div class="stack-desc" style="margin-bottom:8px;">
+            ESG 문제찾기 과제의 일환으로, 이모네 반찬의 ESG 문제를 해결하기 위한 홍보영상 제작
+          </div>
+          <div class="stack-desc" style="margin-bottom:8px;">
+            <strong>과제 수행월:</strong> 2024.06
+          </div>
+        </div>
+        <!-- 그래픽스 박스 -->
+        <div class="stack-item project-card" id="graphics-card" style="min-width:280px; max-width:48%; cursor:pointer; position:relative;">
+          <div class="stack-name" style="font-size:1.18rem;">
+            <a href="#" id="graphics-link" style="color:#2d72d9; text-decoration:none; pointer-events:none;">🤖 그래픽스 관련 자유과제물 만들기</a>
+          </div>
+          <div class="stack-desc" style="margin-bottom:8px;">
+            AI 시대, 긍정적으로만 바라봐야 할까? 라는 주제로 그래픽스 수업 과제 수행
+          </div>
+          <div class="stack-desc" style="margin-bottom:8px;">
+            <strong>과제 수행월:</strong> 2024.06
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -423,6 +474,57 @@
     <div style="background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:18px 18px 10px 18px; max-width:90vw; max-height:90vh; position:relative; display:flex; flex-direction:column; align-items:center;">
       <button id="grade2-close" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:2rem; color:#888; cursor:pointer;">&times;</button>
       <img src="imgs/grade2.png" alt="2020년 3월 성적우수장학생 인증 이미지" style="max-width:80vw; max-height:70vh; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <div style="margin-top:8px; color:#444; font-size:1rem;">클릭하거나 ESC를 누르면 닫힙니다.</div>
+    </div>
+  </div>
+  <!-- D-LOG 영상 모달 -->
+  <div id="dlog-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.55); align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:18px 18px 10px 18px; max-width:90vw; max-height:90vh; position:relative; display:flex; flex-direction:column; align-items:center;">
+      <button id="dlog-close" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:2rem; color:#888; cursor:pointer;">&times;</button>
+      <div style="width:70vw; max-width:800px; aspect-ratio:16/9; background:#000; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); display:flex; align-items:center; justify-content:center;">
+        <iframe 
+          src="https://www.youtube.com/embed/U_kwqPn0ZTc?si=6HKjhSCmrQTa3GxL"
+          title="D-LOG Backend 시연 영상"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="width:100%; height:100%; border-radius:8px;">
+        </iframe>
+      </div>
+      <div style="margin-top:8px; color:#444; font-size:1rem;">클릭하거나 ESC를 누르면 닫힙니다.</div>
+    </div>
+  </div>
+  <!-- ESG 영상 모달 추가 (D-LOG 모달과 동일한 디자인) -->
+  <div id="esg-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.55); align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:18px 18px 10px 18px; max-width:90vw; max-height:90vh; position:relative; display:flex; flex-direction:column; align-items:center;">
+      <button id="esg-close" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:2rem; color:#888; cursor:pointer;">&times;</button>
+      <div style="width:70vw; max-width:800px; aspect-ratio:16/9; background:#000; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); display:flex; align-items:center; justify-content:center;">
+        <iframe 
+          src="https://www.youtube.com/embed/Hg4h6LaLYjA"
+          title="ESG 이모네 반찬 홍보영상"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="width:100%; height:100%; border-radius:8px;">
+        </iframe>
+      </div>
+      <div style="margin-top:8px; color:#444; font-size:1rem;">클릭하거나 ESC를 누르면 닫힙니다.</div>
+    </div>
+  </div>
+  <!-- 그래픽스 영상 모달 추가 (약력 모달과 동일한 디자인) -->
+  <div id="graphics-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.55); align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:18px 18px 10px 18px; max-width:90vw; max-height:90vh; position:relative; display:flex; flex-direction:column; align-items:center;">
+      <button id="graphics-close" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:2rem; color:#888; cursor:pointer;">&times;</button>
+      <div style="width:70vw; max-width:800px; aspect-ratio:16/9; background:#000; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); display:flex; align-items:center; justify-content:center;">
+        <iframe 
+          src="https://www.youtube.com/embed/Plz-XqLmqXs?si=Oy47tAirESw2P8RI"
+          title="그래픽스 관련 자유과제물 영상"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="width:100%; height:100%; border-radius:8px;">
+        </iframe>
+      </div>
       <div style="margin-top:8px; color:#444; font-size:1rem;">클릭하거나 ESC를 누르면 닫힙니다.</div>
     </div>
   </div>
@@ -541,9 +643,77 @@
       }
     });
 
-    // 박스 전체 클릭 시 상세 페이지 이동, 단 GitHub 링크 클릭 시에는 이동하지 않음
+    // D-LOG 영상 모달 제어
+    const dlogCard = document.getElementById('dlog-card');
+    const dlogModal = document.getElementById('dlog-modal');
+    const dlogClose = document.getElementById('dlog-close');
+    if (dlogCard && dlogModal && dlogClose) {
+      dlogCard.addEventListener('click', function(e) {
+        e.preventDefault();
+        dlogModal.style.display = 'flex';
+      });
+      dlogClose.addEventListener('click', function() {
+        dlogModal.style.display = 'none';
+      });
+      dlogModal.addEventListener('click', function(e) {
+        if (e.target === dlogModal) dlogModal.style.display = 'none';
+      });
+      document.addEventListener('keydown', function(e) {
+        if (dlogModal.style.display === 'flex' && e.key === 'Escape') {
+          dlogModal.style.display = 'none';
+        }
+      });
+    }
+
+    // ESG 영상 모달 제어
+    const esgCard = document.getElementById('esg-card');
+    const esgModal = document.getElementById('esg-modal');
+    const esgClose = document.getElementById('esg-close');
+    if (esgCard && esgModal && esgClose) {
+      esgCard.addEventListener('click', function(e) {
+        e.preventDefault();
+        esgModal.style.display = 'flex';
+      });
+      esgClose.addEventListener('click', function() {
+        esgModal.style.display = 'none';
+      });
+      esgModal.addEventListener('click', function(e) {
+        if (e.target === esgModal) esgModal.style.display = 'none';
+      });
+      document.addEventListener('keydown', function(e) {
+        if (esgModal.style.display === 'flex' && e.key === 'Escape') {
+          esgModal.style.display = 'none';
+        }
+      });
+    }
+
+    // 그래픽스 영상 모달 제어
+    const graphicsCard = document.getElementById('graphics-card');
+    const graphicsModal = document.getElementById('graphics-modal');
+    const graphicsClose = document.getElementById('graphics-close');
+    if (graphicsCard && graphicsModal && graphicsClose) {
+      graphicsCard.addEventListener('click', function(e) {
+        e.preventDefault();
+        graphicsModal.style.display = 'flex';
+      });
+      graphicsClose.addEventListener('click', function() {
+        graphicsModal.style.display = 'none';
+      });
+      graphicsModal.addEventListener('click', function(e) {
+        if (e.target === graphicsModal) graphicsModal.style.display = 'none';
+      });
+      document.addEventListener('keydown', function(e) {
+        if (graphicsModal.style.display === 'flex' && e.key === 'Escape') {
+          graphicsModal.style.display = 'none';
+        }
+      });
+    }
+
+    // 기존 상세페이지 이동 로직에서 D-LOG, ESG, 그래픽스 박스는 제외
     document.querySelectorAll('.project-card').forEach(function(card) {
       card.addEventListener('click', function(e) {
+        // D-LOG, ESG, 그래픽스 박스는 모달로 처리
+        if (card.id === 'dlog-card' || card.id === 'esg-card' || card.id === 'graphics-card') return;
         // GitHub 저장소 바로가기 클릭 시 무시
         if (e.target.tagName === 'A' && e.target.getAttribute('href') && e.target.getAttribute('href').startsWith('http')) {
           e.stopPropagation();
