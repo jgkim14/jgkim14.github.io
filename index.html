@@ -361,6 +361,19 @@
     <div class="project" style="margin-bottom:32px;">
       <h2>📁 수행한 프로젝트</h2>
       <div class="stack-list project-stack-list" style="justify-content:center; gap:24px;">
+        <!-- JMO SmartFarm 박스 -->
+        <div class="stack-item project-card" id="smartfarm-card" style="min-width:280px; max-width:48%; cursor:pointer; position:relative;">
+          <div class="stack-name" style="font-size:1.18rem;">
+            <a href="smartfarm.html" style="color:#2d72d9; text-decoration:none; pointer-events:none;">🌱 JMO SmartFarm</a>
+          </div>
+          <div class="stack-desc" style="margin-bottom:8px;">
+            캡스톤 디자인 프로젝트로, 농작물 자동관리, 모니터링 시스템을 제작 및 개발했습니다.
+          </div>
+          <div class="stack-desc" style="margin-bottom:8px;">
+            <strong>프로젝트 기간:</strong> 2024.01 - 2024.06 
+          </div>
+          <a href="#" id="smartfarm-github-link" style="font-size:0.98rem; position:relative; z-index:2;">GitHub 저장소 바로가기</a>
+        </div>
         <!-- JMEDUSERVER 박스 -->
         <div class="stack-item project-card" data-href="jmeduserver.html" style="min-width:280px; max-width:48%; cursor:pointer; position:relative;">
           <div class="stack-name" style="font-size:1.18rem;">
@@ -532,6 +545,28 @@
         </iframe>
       </div>
       <div style="margin-top:8px; color:#444; font-size:1rem;">팝업 밖을 클릭하거나 ESC를 누르면 닫힙니다.</div>
+    </div>
+  </div>
+  <!-- SmartFarm Github 모달 팝업 추가 -->
+  <div id="smartfarm-github-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.55); align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:24px 28px 20px 28px; max-width:90vw; max-height:90vh; position:relative; display:flex; flex-direction:column; align-items:center;">
+      <button id="smartfarm-github-close" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:2rem; color:#888; cursor:pointer;">&times;</button>
+      <h2 style="margin-bottom:18px; color:#22223b; font-size:1.25rem; font-weight:700;">GitHub 저장소 바로가기</h2>
+      <div style="display:flex; flex-direction:column; gap:16px; width:100%; align-items:center;">
+        <a href="https://github.com/TreeNut-KR/JMS_smart_farm" target="_blank"
+          style="display:inline-block; min-width:220px; text-align:center; padding:10px 0; background:#4caf50; color:#fff; border-radius:6px; font-size:1.08rem; font-weight:600; text-decoration:none; box-shadow:0 2px 8px rgba(76,175,80,0.08); transition:background 0.2s;">
+          하드웨어 제어 저장소
+        </a>
+        <a href="https://github.com/jgkim14/SmartFarm" target="_blank"
+          style="display:inline-block; min-width:220px; text-align:center; padding:10px 0; background:#2d72d9; color:#fff; border-radius:6px; font-size:1.08rem; font-weight:600; text-decoration:none; box-shadow:0 2px 8px rgba(45,114,217,0.08); transition:background 0.2s;">
+          백엔드 저장소
+        </a>
+        <a href="https://github.com/GingGang/smartfarm_front" target="_blank"
+          style="display:inline-block; min-width:220px; text-align:center; padding:10px 0; background:#ff9800; color:#fff; border-radius:6px; font-size:1.08rem; font-weight:600; text-decoration:none; box-shadow:0 2px 8px rgba(255,152,0,0.08); transition:background 0.2s;">
+          프론트엔드 저장소
+        </a>
+      </div>
+      <div style="margin-top:14px; color:#444; font-size:1rem;">팝업 밖을 클릭하거나 ESC를 누르면 닫힙니다.</div>
     </div>
   </div>
   <script>
@@ -715,14 +750,45 @@
       });
     }
 
+    // SmartFarm Github 모달 제어
+    const smartfarmGithubLink = document.getElementById('smartfarm-github-link');
+    const smartfarmGithubModal = document.getElementById('smartfarm-github-modal');
+    const smartfarmGithubClose = document.getElementById('smartfarm-github-close');
+    if (smartfarmGithubLink && smartfarmGithubModal && smartfarmGithubClose) {
+      smartfarmGithubLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        smartfarmGithubModal.style.display = 'flex';
+      });
+      smartfarmGithubClose.addEventListener('click', function() {
+        smartfarmGithubModal.style.display = 'none';
+      });
+      smartfarmGithubModal.addEventListener('click', function(e) {
+        if (e.target === smartfarmGithubModal) smartfarmGithubModal.style.display = 'none';
+      });
+      document.addEventListener('keydown', function(e) {
+        if (smartfarmGithubModal.style.display === 'flex' && e.key === 'Escape') {
+          smartfarmGithubModal.style.display = 'none';
+        }
+      });
+    }
+
+    const smartfarmCard = document.getElementById('smartfarm-card');
+    if (smartfarmCard) {
+      smartfarmCard.addEventListener('click', function(e) {
+        if (e.target.id === 'smartfarm-github-link') return;
+        window.location.href = 'smartfarm.html';
+      });
+    }
+
     document.querySelectorAll('.project-card').forEach(function(card) {
+      if (card.id === 'smartfarm-card') return;
       card.addEventListener('click', function(e) {
         if (card.id === 'dlog-card' || card.id === 'esg-card' || card.id === 'graphics-card') return;
         if (e.target.tagName === 'A' && e.target.getAttribute('href') && e.target.getAttribute('href').startsWith('http')) {
           e.stopPropagation();
           return;
         }
-        // 상세 페이지로 이동
         window.location.href = card.getAttribute('data-href');
       });
     });

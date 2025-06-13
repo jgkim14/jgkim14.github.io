@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JMO SmartFarm</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png">
+  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', Arial, sans-serif;
+      background-color: #f7f7fa;
+      color: #222;
+      line-height: 1.7;
+      padding-bottom: 50px;
+      min-height: 100vh;
+    }
+    a {
+      color: #2d72d9;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #174ea6;
+    }
+    header {
+      background: #fff;
+      padding: 48px 20px 32px 20px;
+      text-align: center;
+      border-bottom: 1px solid #ececec;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    header h1 {
+      font-size: 2.2rem;
+      color: #22223b;
+      margin-bottom: 12px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #6c757d;
+      font-weight: 500;
+    }
+    main {
+      max-width: 900px;
+      margin: 48px auto 0 auto;
+      padding: 0 24px;
+    }
+    .project-section {
+      background: #fff;
+      padding: 28px 28px 20px 28px;
+      border-radius: 14px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #ececec;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .project-section:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+      transform: translateY(-3px) scale(1.01);
+    }
+    .project-section h2 {
+      color: #22223b;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      margin-top: 24px;
+    }
+    .project-section p, .project-section li, .project-section td {
+      color: #444;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+    .project-section strong {
+      color: #2d72d9;
+      font-weight: 600;
+    }
+    ul, ol { padding-left: 22px; margin-bottom: 12px; }
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: #fafbfc;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      border: 1px solid #ececec;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f4f8;
+      color: #22223b;
+      font-weight: 600;
+    }
+    .back {
+      margin-top: 30px;
+      text-align: left;
+    }
+    .stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .stack-item {
+      background: #f4f8fd;
+      border: 1px solid #e3eaf5;
+      border-radius: 10px;
+      padding: 16px 18px 12px 18px;
+      min-width: 180px;
+      flex: 1 1 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 0 2px 8px rgba(45,114,217,0.04);
+      transition: box-shadow 0.2s;
+    }
+    .stack-item:hover {
+      box-shadow: 0 6px 18px rgba(45,114,217,0.10);
+    }
+    .stack-name {
+      font-weight: 700;
+      color: #2d72d9;
+      font-size: 1.08rem;
+      margin-bottom: 4px;
+    }
+    .stack-desc {
+      color: #444;
+      font-size: 0.98rem;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      main { padding: 0 8px; }
+      .project-section { padding: 14px 8px 10px 8px; }
+      .project-section h2 { font-size: 1.05rem; }
+      table, th, td { font-size: 0.95rem; }
+    }
+    @media (max-width: 700px) {
+      .stack-list {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .stack-item {
+        min-width: 0;
+        width: 100%;
+        flex: none !important;
+        padding: 12px 12px 10px 12px !important;
+      }
+    }
+    footer {
+      text-align: center;
+      padding: 28px 0 16px 0;
+      color: #b0b0b0;
+      font-size: 1rem;
+      background: #f7f7fa;
+      border-top: 1px solid #ececec;
+      margin-top: 48px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="index.html" style="color:inherit; text-decoration:none; cursor:pointer;">
+        김준건의 포트폴리오
+      </a>
+    </h1>
+    <p>농작물 자동관리시스템 스마트팜</p>
+  </header>
+  <main>
+    <div class="project-section" style="text-align:center; padding-top:28px; padding-bottom:24px;">
+      <img src="imgs/smartfarm-banner.jpg" alt="메인 스크린샷"
+        style="width:100%; height:auto; display:block; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin:0;">
+    </div>
+
+    <div class="project-section">
+      <h2>프로젝트 개요</h2>
+      <p>
+        <strong>JMO SmartFarm</strong>는 학교 캡스톤 과제로 수행했으며, 농작물 자동 관리 및 모니터링하여 그 데이터를 사용자에게 제공하는 시스템입니다.
+      </p>
+      <p>
+        <a href="#" id="smartfarm-github-link"
+          style="display:inline-block; padding:8px 20px; background:#2d72d9; color:#fff; border-radius:6px; font-size:1rem; font-weight:600; text-decoration:none; box-shadow:0 2px 8px rgba(45,114,217,0.08); transition:background 0.2s;">
+          GitHub 저장소 바로가기
+        </a>
+      </p>
+    </div>
+
+    <div class="project-section" style="padding-top:18px; padding-bottom:18px;">
+      <h2>👊 사용 기술</h2>
+      <div class="stack-list">
+        <div class="stack-item">
+          <div class="stack-name">⚡ FastAPI</div>
+          <div class="stack-desc">스마트팜의 온도, 습도 등 기록을 받아와 저장, 사용자에게 제공하는 메인 서버</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">🐬 MySQL</div>
+          <div class="stack-desc">스마트팜 관리 기록을 저장하기 위한 DBMS</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">🐳 Docker</div>
+          <div class="stack-desc">컨테이너 기반의 배포 및 관리를 위해 사용</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-name">⚛️ React</div>
+          <div class="stack-desc">모니터링 기록을 사용자에게 보여주기 위한 프론트엔드 프레임워크</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2>프로젝트 구성원</h2>
+      <table>
+        <thead>
+          <tr><th>구성원</th><th>업무</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="https://github.com/jgkim14">김준건 (jgkim14)</a></td><td>백엔드</td></tr>
+          <tr><td><a href="https://github.com/CutTheWire">서정훈 (CutTheWire)</a></td><td>프로젝트 매니저,하드웨어, 백엔드</td></tr>
+          <tr><td><a href="hhttps://github.com/GingGang">손유노 (GingGang)</a></td><td>프론트엔드</td></tr>
+          <tr><td><a href="https://github.com/zbezdac1f">오동현 (zbezdac1f)</a></td><td>백엔드</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="project-section">
+      <h2>시스템 설계</h2>
+      <p align="center">
+        <img src="imgs/smartfarm-system.png" alt="시스템 설계도" width="100%">
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h2>회로 설계</h2>
+      <p align="center">
+        <img src="imgs/hardware.jpg" alt="하드웨어 설계도" width="100%">
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h2>클라이언트 화면</h2>
+      <p align="center">
+        <img src="imgs/smartfarm-front.png" alt="클라이언트 화면" width="100%">
+      </p>
+    </div>
+
+
+    <div class="project-section">
+      <h2>스마트팜 결과 화면</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:center;">
+        <img src="imgs/smartfarm-result1.jpeg" alt="스마트팜 결과 이미지 1" style="max-width:420px; width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <img src="imgs/smartfarm-result2.jpeg" alt="스마트팜 결과 이미지 2" style="max-width:420px; width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      </div>
+    </div>
+
+
+    <div class="project-section back">
+      <a href="index.html">← 돌아가기</a>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 김준건. All rights reserved.
+  </footer>
+
+  <!-- 스마트팜 깃허브 모달 팝업 -->
+<div id="smartfarm-github-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.55); align-items:center; justify-content:center;">
+  <div style="background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:24px 28px 20px 28px; max-width:90vw; max-height:90vh; position:relative; display:flex; flex-direction:column; align-items:center;">
+    <button id="smartfarm-github-close" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:2rem; color:#888; cursor:pointer;">&times;</button>
+    <h2 style="margin-bottom:18px; color:#22223b; font-size:1.25rem; font-weight:700;">GitHub 저장소 바로가기</h2>
+    <div style="display:flex; flex-direction:column; gap:16px; width:100%; align-items:center;">
+      <a href="https://github.com/TreeNut-KR/JMS_smart_farm" target="_blank"
+        style="display:inline-block; min-width:220px; text-align:center; padding:10px 0; background:#4caf50; color:#fff; border-radius:6px; font-size:1.08rem; font-weight:600; text-decoration:none; box-shadow:0 2px 8px rgba(76,175,80,0.08); transition:background 0.2s;">
+        하드웨어 제어 저장소
+      </a>
+      <a href="https://github.com/jgkim14/SmartFarm" target="_blank"
+        style="display:inline-block; min-width:220px; text-align:center; padding:10px 0; background:#2d72d9; color:#fff; border-radius:6px; font-size:1.08rem; font-weight:600; text-decoration:none; box-shadow:0 2px 8px rgba(45,114,217,0.08); transition:background 0.2s;">
+        백엔드 저장소
+      </a>
+      <a href="https://github.com/GingGang/smartfarm_front" target="_blank"
+        style="display:inline-block; min-width:220px; text-align:center; padding:10px 0; background:#ff9800; color:#fff; border-radius:6px; font-size:1.08rem; font-weight:600; text-decoration:none; box-shadow:0 2px 8px rgba(255,152,0,0.08); transition:background 0.2s;">
+        프론트엔드 저장소
+      </a>
+    </div>
+    <div style="margin-top:14px; color:#444; font-size:1rem;">팝업 밖을 클릭하거나 ESC를 누르면 닫힙니다.</div>
+  </div>
+</div>
+
+<script>
+  // 스마트팜 깃허브 모달 제어
+const smartfarmGithubLink = document.getElementById('smartfarm-github-link');
+const smartfarmGithubModal = document.getElementById('smartfarm-github-modal');
+const smartfarmGithubClose = document.getElementById('smartfarm-github-close');
+if (smartfarmGithubLink && smartfarmGithubModal && smartfarmGithubClose) {
+  smartfarmGithubLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    smartfarmGithubModal.style.display = 'flex';
+  });
+  smartfarmGithubClose.addEventListener('click', function() {
+    smartfarmGithubModal.style.display = 'none';
+  });
+  smartfarmGithubModal.addEventListener('click', function(e) {
+    if (e.target === smartfarmGithubModal) smartfarmGithubModal.style.display = 'none';
+  });
+  document.addEventListener('keydown', function(e) {
+    if (smartfarmGithubModal.style.display === 'flex' && e.key === 'Escape') {
+      smartfarmGithubModal.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
