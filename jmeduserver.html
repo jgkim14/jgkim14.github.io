@@ -151,6 +151,8 @@
       .project-section { padding: 14px 8px 10px 8px; }
       .project-section h2 { font-size: 1.05rem; }
       table, th, td { font-size: 0.95rem; }
+      .banner-img { display: none !important; }
+      .banner-img-mobile { display: block !important; }
     }
     @media (max-width: 700px) {
       .stack-list {
@@ -163,6 +165,10 @@
         flex: none !important;
         padding: 12px 12px 10px 12px !important;
       }
+    }
+    @media (min-width: 601px) {
+      .banner-img { display: block !important; }
+      .banner-img-mobile { display: none !important; }
     }
     footer {
       text-align: center;
@@ -185,18 +191,13 @@
     <p>학생관리시스템 서버 및 주요 기능 소개</p>
   </header>
   <main>
-    <div
-      style="
-        width:100%;
-        height:220px;
-        background: url('imgs/screenshot-main.png') center center/cover no-repeat;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        margin: 0 0 32px 0;
-      "
-      aria-label="메인 배너"
-    >
-    </div>
+    <div class="banner-img"
+      style="width:100%; height:220px; background: url('imgs/screenshot-main.png') center center/cover no-repeat; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin:0 0 32px 0;"
+      aria-label="메인 배너"></div>
+    <img class="banner-img-mobile"
+      src="imgs/screenshot-main.png"
+      alt="메인 배너"
+      style="width:100%; height:auto; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin:0 0 32px 0; display:none;">
 
     <div class="project-section">
       <h2>프로젝트 개요</h2>

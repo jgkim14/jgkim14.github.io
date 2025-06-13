@@ -185,18 +185,24 @@
     <p>AI 챗봇 서버 및 주요 기능 소개</p>
   </header>
   <main>
-    <div
-      style="
-        width:100%;
-        height:220px;
-        background: url('imgs/characterchat-banner.png') center center/cover no-repeat;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        margin: 0 0 32px 0;
-      "
-      aria-label="메인 배너"
-    >
-    </div>
+    <!-- 데스크탑: 배경 div, 모바일: img -->
+    <style>
+      @media (max-width: 600px) {
+        .banner-img { display: none !important; }
+        .banner-img-mobile { display: block !important; }
+      }
+      @media (min-width: 601px) {
+        .banner-img { display: block !important; }
+        .banner-img-mobile { display: none !important; }
+      }
+    </style>
+    <div class="banner-img"
+      style="width:100%; height:220px; background: url('imgs/characterchat-banner.png') center center/cover no-repeat; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin:0 0 32px 0;"
+      aria-label="메인 배너"></div>
+    <img class="banner-img-mobile"
+      src="imgs/characterchat-banner.png"
+      alt="메인 배너"
+      style="width:100%; height:auto; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin:0 0 32px 0; display:none;">
 
     <div class="project-section">
       <h2>프로젝트 개요</h2>
