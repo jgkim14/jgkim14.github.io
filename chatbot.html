@@ -186,14 +186,14 @@
   </header>
   <main>
     <!-- 동영상 재생 박스 추가 -->
-    <div style="width:100%; max-width:900px; margin:0 auto 24px auto; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); background:#000;">
+    <div style="width:100%; max-width:900px; margin:0 auto 24px auto; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); background:#000; position:relative; z-index:10000;">
       <video
         src="imgs/chatbot_intro.mp4"
         autoplay
         muted
         playsinline
         style="width:100%; height:auto; display:block; border-radius:12px;"
-        onended="this.controls=false"
+        onended="this.pause(); this.currentTime=this.duration;"
       ></video>
     </div>
     <!-- 데스크탑: 배경 div, 모바일: img -->
@@ -235,7 +235,7 @@
   <h2 style="text-align:left;">시연 영상</h2>
   <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); background:#000;">
     <iframe 
-      src="https://www.youtube.com/embed/U_kwqPn0ZTc" 
+      src="https://www.youtube.com/embed/LTt9OjacvmA"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -400,5 +400,31 @@
   <footer>
     &copy; 2025 김준건. All rights reserved.
   </footer>
+
+  <script>
+  // 페이지 진입 시 배경 덮어쓰기
+  document.addEventListener('DOMContentLoaded', function() {
+    // 배경을 덮을 오버레이 생성
+    const overlay = document.createElement('div');
+    overlay.id = 'bg-overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.left = 0;
+    overlay.style.top = 0;
+    overlay.style.width = '100vw';
+    overlay.style.height = '100vh';
+    overlay.style.background = '#0f1727';
+    overlay.style.zIndex = 9999;
+    overlay.style.transition = 'opacity 0.5s';
+    document.body.appendChild(overlay);
+
+    // 4초 뒤 오버레이 제거
+    setTimeout(() => {
+      overlay.style.opacity = 0;
+      setTimeout(() => {
+        overlay.remove();
+      }, 500);
+    }, 4000);
+  });
+</script>
 </body>
 </html>
