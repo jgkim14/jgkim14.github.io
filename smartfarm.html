@@ -185,6 +185,17 @@
   <script>
   // 스마트팜: 배너를 제외한 전체 배경 오버레이 1.5초 적용 (배너는 항상 위에 보이게)
   document.addEventListener('DOMContentLoaded', function() {
+    // 배너 페이드인 효과
+    const pcBanner = document.getElementById('smartfarm-banner');
+    if (pcBanner) {
+      setTimeout(() => { pcBanner.style.opacity = 1; }, 50);
+    }
+    const mobileBanner = document.querySelector('.banner-img-mobile');
+    if (mobileBanner) {
+      setTimeout(() => { mobileBanner.style.opacity = 1; }, 50);
+    }
+
+    // 오버레이
     const overlay = document.createElement('div');
     overlay.id = 'bg-overlay';
     overlay.style.position = 'fixed';
@@ -227,12 +238,13 @@
       }
     </style>
     <div class="banner-img"
-      style="width:100%; height:220px; background: url('imgs/smartfarm-banner.jpg') center center/cover no-repeat; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin:0 0 32px 0;"
+      id="smartfarm-banner"
+      style="width:100%; height:220px; background: url('imgs/smartfarm-banner.jpg') center center/cover no-repeat; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin:0 0 32px 0; opacity:0; transition:opacity 0.5s;"
       aria-label="메인 배너"></div>
     <img class="banner-img-mobile"
       src="imgs/smartfarm-banner.jpg"
       alt="메인 배너"
-      style="width:100%; height:auto; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin:0 0 32px 0; display:none;">
+      style="width:100%; height:auto; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin:0 0 32px 0; display:none; opacity:0; transition:opacity 0.5s;">
 
     <div class="project-section">
       <h2> 📄 프로젝트 개요</h2>
