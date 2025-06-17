@@ -174,8 +174,38 @@
       margin-top: 48px;
     }
   </style>
+  <style>
+    .banner-img, .banner-img-mobile {
+      position: relative;
+      z-index: 10000;
+    }
+  </style>
 </head>
 <body>
+  <script>
+  // 스마트팜: 배너를 제외한 전체 배경 오버레이 1.5초 적용 (배너는 항상 위에 보이게)
+  document.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.createElement('div');
+    overlay.id = 'bg-overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.left = 0;
+    overlay.style.top = 0;
+    overlay.style.width = '100vw';
+    overlay.style.height = '100vh';
+    overlay.style.background = '#000';
+    overlay.style.zIndex = 9998;
+    overlay.style.transition = 'opacity 0.5s';
+    overlay.style.pointerEvents = 'none';
+    document.body.appendChild(overlay);
+
+    setTimeout(() => {
+      overlay.style.opacity = 0;
+      setTimeout(() => {
+        overlay.remove();
+      }, 500);
+    }, 1500);
+  });
+  </script>
   <header>
     <h1>
       <a href="index.html" style="color:inherit; text-decoration:none; cursor:pointer;">
