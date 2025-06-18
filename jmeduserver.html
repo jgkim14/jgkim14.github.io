@@ -198,13 +198,13 @@
   </header>
   <main>
     <!-- 기존 배너 이미지(div.banner-img, img.banner-img-mobile) 부분을 아래로 교체하세요 -->
-<div style="width:100%; max-width:900px; margin:0 auto 24px auto; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); background:#000; position:relative; z-index:10000;">
+<div style="width:100%; max-width:900px; margin:0 auto 24px auto; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); background:#000; position:relative; z-index:10000; aspect-ratio:10/2;">
   <video
     src="imgs/jmedu-intro.mp4"
     autoplay
     muted
     playsinline
-    style="width:100%; height:auto; display:block; border-radius:12px;"
+    style="width:103%; height:103%; display:block; border-radius:12px; object-fit:cover;"
     onended="this.pause(); this.currentTime=this.duration;"
   ></video>
 </div>
