@@ -28,7 +28,7 @@
     }
     a:hover {
       text-decoration: underline;
-      color: #174ea6;
+      color: #4d89e9;
     }
     header {
       background: #fff;
@@ -197,14 +197,13 @@
     <p>학생관리시스템 서버 및 주요 기능 소개</p>
   </header>
   <main>
-    <!-- 기존 배너 이미지(div.banner-img, img.banner-img-mobile) 부분을 아래로 교체하세요 -->
-<div style="width:100%; max-width:900px; margin:0 auto 24px auto; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); background:#000; position:relative; z-index:10000; aspect-ratio:10/2;">
+<div style="width:100%; max-width:900px; margin:0 auto 24px auto; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); background:#000; position:relative; z-index:10000; aspect-ratio:320/129;">
   <video
     src="imgs/jmedu-intro.mp4"
     autoplay
     muted
     playsinline
-    style="width:103%; height:103%; display:block; border-radius:12px; object-fit:cover;"
+    style="width:100%; height:100%; display:block; border-radius:12px; object-fit:cover;"
     onended="this.pause(); this.currentTime=this.duration;"
   ></video>
 </div>
@@ -269,24 +268,14 @@
 
     <div class="project-section">
       <h2>주요 화면</h2>
-      <p align="center">
-        <img src="imgs/kakaotalk-photo.jpeg" alt="카카오톡 알림 이미지" width="500">
+      <p align="center" style="display:flex; flex-wrap:wrap; gap:24px; justify-content:center;">
+        <img src="imgs/jmedu-photo1.jpeg" alt="주요 화면 1" style="max-width:320px; width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <img src="imgs/jmedu-photo2.jpeg" alt="주요 화면 2" style="max-width:320px; width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <img src="imgs/jmedu-photo3.jpeg" alt="주요 화면 3" style="max-width:320px; width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <img src="imgs/jmedu-photo4.jpeg" alt="주요 화면 4" style="max-width:320px; width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
       </p>
     </div>
 
-        <div class="project-section" style="text-align:center; padding-top:24px; padding-bottom:24px;">
-  <h2 style="text-align:left;">🎬 시연 영상</h2>
-  <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); background:#000;">
-    <iframe 
-      src="https://www.youtube.com/embed/U_kwqPn0ZTc" 
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-      style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:12px;">
-    </iframe>
-  </div>
-</div>
 
         <div class="project-section">
       <h2>고객의 요구사항 분석</h2>
@@ -490,7 +479,7 @@
       setTimeout(() => {
         overlay.remove();
       }, 500);
-    }, 3000);
+    }, 3500);
   });
   </script>
 </body>
